@@ -1,0 +1,37 @@
+body {
+    font-family: 'DM Sans', sans-serif;
+    
+    margin: 0px;
+}
+.container {
+    width: 100%;
+    max-width: $desktop;
+    min-width: 200px;
+
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media screen and (min-width: $mobile) {
+        width: $mobile;
+
+    }
+
+    @media screen and (min-width: $tablet) {
+        padding-right: 32px;
+        padding-left: 32px;
+
+        width: $tablet;
+
+    }
+
+    @media screen and (min-width: $desktop) {
+        padding-right: 24px;
+        padding-left: 24px;
+
+        width: $desktop;
+
+    }
+}
+
