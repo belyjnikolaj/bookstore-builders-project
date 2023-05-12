@@ -1,0 +1,32 @@
+// ___________________everywhere__________________
+
+$secondary-text: #B4AFAF;
+$accent-bgc-color: #EAC645;
+$button-bgc: #4F2EE8;
+$backdrop-popup: #4F2EE8;
+$fonds-bgc: radial-gradient(183.6% 183.01% at 59.76% -23.42%, #4F2EE8 18.03%, #FFFFFF 100%);
+
+// ___________________light__________________
+$primary-text-light: #111111;
+$categories-text-light: rgba(17, 17, 17, 0.6);
+$message-absent-text-light: rgba(0, 0, 0, 0.6);
+$header-bgc-light: #FFFFFF;
+$primary-bgc-light: #F6F6F6;
+$switch-bgc-light: linear-gradient(180deg, #4F2EE8 0%, #DCDCDC 100%);
+$accent-text-light: #4F2EE8;
+
+// ___________________dark__________________
+$primary-text-dark: #FFFFFF;
+$categories-text-dark: rgba(255, 255, 255, 0.6);
+$message-absent-text-dark: rgba(255, 255, 255, 0.6);
+$header-bgc-dark: #111111;
+$primary-bgc-dark: #202024;
+$switch-bgc-dark: linear-gradient(180deg, #4F2EE8 0%, #686868 100%);
+$accent-text-dark: #EAC645;
+
+$font-family: sans-serif;
+$font-main: 'DM Sans';
+
+$mobile: 375px;
+$tablet: 768px;
+$desktop: 1440px;
