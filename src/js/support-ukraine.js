@@ -3,6 +3,7 @@ import 'swiper/css';
 
 const swiper = new Swiper('.swiper', {
     
+
 });
 
 export { supportUkraine };
