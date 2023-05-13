@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping List</title>
+    <link rel="stylesheet" href="./sass/index.scss" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Shopping <span class="list">List</span></h2>
+      <div class="shopping-list"></div>
+      <div class="empty-list">
+        <p class="empty-list__paragraph"></p>
+        <div class="empty-list__image">
+          <picture>
+            <source
+              srcset="
+                ./images/shopping-list/shopping-list-empty-img-375.jpg    1x,
+                ./images/shopping-list/shopping-list-empty-img-375@2x.jpg 2x
+              "
+              media="(max-width: 767px)"
+              type="image/jpeg"
+            />
+            <source
+              srcset="
+                ./images/shopping-list/shopping-list-empty-img-768.jpg    1x,
+                ./images/shopping-list/shopping-list-empty-img-768@2x.jpg 2x
+              "
+              media="(max-width: 1439px)"
+              type="image/jpeg"
+            />
+            <source
+              srcset="
+                ./images/homepage/shopping-list-empty-img-1440.jpg    1x,
+                ./images/homepage/shopping-list-empty-img-1440@2x.jpg 2x
+              "
+              type="image/jpeg"
+            />
+            <img
+              class="empty-list__image--border"
+              src="./images/shopping-list/shopping-list-empty-img-375.jpg"
+              alt="Stack of books"
+            />
+          </picture>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
