@@ -14,15 +14,14 @@ const signinTab = document.getElementById('signin-tab');
 const signupTab = document.getElementById('signup-tab');
 const signinContent = document.getElementById('signin-content');
 const signupContent = document.getElementById('signup-content');
-const backdropAuth = document.getElementById('backdropauth');
+
 
 startButton.addEventListener('click', () => {
   modal.style.display = 'block';
-  backdropAuth.style.display = 'block';
+  signinContent.classList.add('show');
 });
 
 close.addEventListener('click', () => {
-  backdropAuth.style.display = 'none';
   modal.style.display = 'none';
   startButton.innerText = `Start (${localStorage.getItem('email')})`;
 });
@@ -64,8 +63,8 @@ signinButton.addEventListener('click', () => {
       const user = userCredential.user;
       console.log('Successful user login:', user);
       notiflix.Notify.Success('Successful login!');
-      localStorage.setItem('email', email);
       modal.style.display = 'none';
+      startButton.style.display = 'none'
       startButton.innerText = `Start (${email})`;
     })
     .catch(error => {
@@ -79,15 +78,7 @@ signinButton.addEventListener('click', () => {
 signupButton.addEventListener('click', () => {
   const email = document.getElementById('signup-email').value;
   const password = document.getElementById('signup-password').value;
-  const confirmPassword = document.getElementById(
-    'signup-confirm-password'
-  ).value;
-
-  if (password !== confirmPassword) {
-    console.error('Passwords do not match');
-    notiflix.Notify.Failure('Passwords do not match');
-    return;
-  }
+  const name = document.getElementById('name').value;
 
   createUserWithEmailAndPassword(auth, email, password)
     .then(userCredential => {
@@ -96,7 +87,19 @@ signupButton.addEventListener('click', () => {
       notiflix.Notify.Success(
         'Successful registration! Redirecting to another page...'
       );
-      window.location.href = 'index.html';
+
+      // Збереження імені користувача в профіль Firebase
+      user.updateProfile({
+        displayName: name
+      })
+        .then(() => {
+          console.log('User profile updated:', user.displayName);
+          // Закриття модалки
+          modal.style.display = 'none';
+        })
+        .catch(error => {
+          console.error('Error updating user profile:', error);
+        });
     })
     .catch(error => {
       const errorCode = error.code;

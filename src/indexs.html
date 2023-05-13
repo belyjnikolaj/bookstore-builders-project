@@ -4,20 +4,18 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Firebase Authentication</title>
     <link rel="stylesheet" href="./sass/index.scss" />
   </head>
   <body>
     <button id="start-button">Start</button>
-<div id="#backdropauth"></div>
+    <button id="user-status">USER</button>
+
+    <div id="#backdropauth"></div>
     <div class="modal-auth" id="modal-auth">
       <div class="modal-content">
         <span class="close" id="close">&times;</span>
-        <div class="tabs">
-          
-        </div>
+        <div class="tabs"></div>
         <div class="tab-content" id="signin-content">
-          <h2>Sign In</h2>
           <input type="email" id="email" placeholder="Email" required />
           <input
             type="password"
@@ -26,12 +24,10 @@
             required
           />
           <button id="signin-button">Sign In</button>
-          
         </div>
-        <button class="tab" id="signin-tab">Sign In</button>
-          <button class="tab" id="signup-tab">Sign Up</button>
+
         <div class="tab-content" id="signup-content">
-          <h2>Sign Up</h2>
+          <input type="name" id="name" placeholder="Name" required />
           <input type="email" id="signup-email" placeholder="Email" required />
           <input
             type="password"
@@ -39,17 +35,13 @@
             placeholder="Password"
             required
           />
-          <input
-            type="password"
-            id="signup-confirm-password"
-            placeholder="Request password"
-            required
-          />
           <button id="signup-button">Sign Up</button>
         </div>
+        <span class="tab" id="signin-tab">Sign In</span>
+        <span class="tab" id="signup-tab">Sign Up</span>
       </div>
     </div>
-     <script src="https://cdn.jsdelivr.net/npm/notiflix@2.7.0/dist/notiflix-aio-2.7.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/notiflix@2.7.0/dist/notiflix-aio-2.7.0.min.js"></script>
     <script type="module" src="index.js"></script>
   </body>
 </html>
