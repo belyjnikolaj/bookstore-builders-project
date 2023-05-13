@@ -10,21 +10,7 @@ async function fetchBestSellers() {
   const resp = await axios.get(`https://books-backend.p.goit.global/books/top-books`).then(response => response.data);
    return resp;
 }
-let currentRenderWidth = window.innerWidth;
-let amountRenderedBooks = 1;
 
-function createHero() {
-  console.log('hello');
-  if (currentRenderWidth < 768) {
-    amountRenderedBooks = 1;
-  } else if (currentRenderWidth > 767 && currentRenderWidth < 1440) {
-    amountRenderedBooks = 3;
-  } else {
-    amountRenderedBooks = 5;
-  }
-
- return bestSellersGal.innerHTML = markupBooksList(data).join('');
- };
  fetchBestSellers().then(data => {
    console.log(data);
 })
