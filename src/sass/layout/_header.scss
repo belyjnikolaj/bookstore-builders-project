@@ -1,0 +1,19 @@
+.section-header {
+  @media screen and (min-width: $mobile) {
+    width: $mobile;
+  }
+
+  @media screen and (min-width: $tablet) {
+    padding-right: 32px;
+    padding-left: 32px;
+
+    width: $tablet;
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding-right: 24px;
+    padding-left: 24px;
+
+    width: $desktop;
+  }
+}
