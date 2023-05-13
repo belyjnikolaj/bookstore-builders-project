@@ -1,76 +1,50 @@
-const URL_API_ID = 'https://books-backend.p.goit.global/books/bookId';
+import axios from 'axios';
 
 const refs = {
-  openModalCardBtn: document.querySelector('.data-modal-card-open'),
+  openModalCardBtn: document.querySelector(
+    'button[name="data-modal-card-open"]'
+  ),
   modalCard: document.querySelector('#data-modal-card'),
   closeModalCardBtn: document.querySelector('.modal-card_close'),
-  modalCardAddToShoppingBtn: document.querySelector(
-    '.data-modal-card-add-shopping'
-  ),
 };
 
-refs.openModalCardBtn.addEventListener('click', onClickOpen);
-refs.closeModalCardBtn.addEventListener('click', onClickClose);
-refs.modalCardAddToShoppingBtn.addEventListener('click', onClickAddShopping);
+// refs.openModalCardBtn.addEventListener('click', onclick);
+// refs.modalCard.addEventListener('click', toggleModal);
 
-function openModal(bookId) {
-  refs.modal.style.display = 'block';
+// function toggleModal() {
+//     document.body.classList.toggle('modal-open');
+//     refs.modalCard.classList.toggle('is-hidden');
+//   }
 
-  const params = {
-    q: URL_API_ID,
-    book_image: 'book_image',
-    list_name: 'list_name',
-    author: 'author',
-    description: 'description',
-    category: 'category_list',
-    buy: 'buy_links',
-  };
+const renderBooks = (data, refs) => {
+  const bookElMarkup = `
+    <img src="${data.book_image}" alt="${data.title}" />
+    <h3 class="modal-card_title">${data.title}</h3>
+    <p class="modal-card_subtitle">${data.author}</p>
+    <p class="modal-card_desq">${data.description}</p>
+    <ul> 
+      <li><a href="#">Link 1</a></li>
+      <li><a href="#">Link 2</a></li>
+      <li><a href="#">Link 3</a></li>
+    </ul>
+  `;
 
-  const renderBookDetails = (book, refs) => {
-    const bookMarkup = `
-     <img src="${book.image}" alt="${book.title}" />
-     <h3 ${book.title} class="modal-card_title">ЗАБРОНЮВАТИ СТОЛИК</h3>
-     <p ${book.author} class="modal-card_subtitle"></p>
-     <p ${book.description} class="modal-card_desq"></p>
-      <ul>
-      <li><a href=""></a></li>
-      <li><a href=""></a></li>
-      <li><a href=""></a></li>
-       </ul>
-     `;
-    refs.modalCardContent.innerHTML = bookMarkup;
-    console.log(renderBookDetails);
-  };
+  refs.modalCard.insertAdjacentHTML('beforeend', bookElMarkup);
+};
 
-  const queryString = new URLSearchParams(params).toString();
-  fetch(`${URL_API_ID}${bookId}?${queryString}`)
-    .then(response => response.json())
-    .then(data => {
-      renderBookDetails(data, refs);
-    })
-    .catch(error => {
-      console.log('Error:', error);
-    });
-}
+const URL_API = 'https://books-backend.p.goit.global/books/';
+const bookId = '643282b1e85766588626a0dc';
 
-
-fetch( URL_API_ID)
-  .then(response => {
-    // Response handling
-  })
+const fetchBook = fetch(`${URL_API}${bookId}`)
+  .then(data => data.json())
   .then(data => {
-    // Data handling
+    renderBooks(data, refs);
+    console.log({ data });
   })
   .catch(error => {
-    // Error handling
+    console.log('Error:', error);
   });
 
-function closeModal() {
-  refs.modal.style.display = 'none';
-}
-
-function addToShoppingList() {
-  console.log('Book added to shopping list');
-}
+console.log(renderBooks);
 
 export { modalCard };
