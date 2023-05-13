@@ -4,10 +4,11 @@ import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
 } from 'firebase/auth';
+
 import notiflix from 'notiflix';
 
 const startButton = document.getElementById('start-button');
-const modal = document.getElementById('modal-auth  ');
+const modal = document.getElementById('modal-auth');
 const close = document.getElementById('close');
 const signinTab = document.getElementById('signin-tab');
 const signupTab = document.getElementById('signup-tab');
@@ -36,10 +37,9 @@ signupTab.addEventListener('click', () => {
   signupContent.classList.add('show');
 });
 
-const API_KEY = import.meta.env.VITE_API_KEY;
 // Firebase configuration
 const firebaseConfig = {
-  apiKey: API_KEY,
+  apiKey: "AIzaSyCWbs0N9AYzirIviZZUsVMIJ2enE8aYPbw",
   authDomain: 'bookstorecommunity.firebaseapp.com',
   projectId: 'bookstorecommunity',
   storageBucket: 'bookstorecommunity.appspot.com',
@@ -48,7 +48,7 @@ const firebaseConfig = {
   measurementId: 'G-X61KC3SJ2C',
 };
 
-// Ініціалізуємо Firebase
+
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
@@ -61,7 +61,6 @@ signinButton.addEventListener('click', () => {
 
   signInWithEmailAndPassword(auth, email, password)
     .then(userCredential => {
-      // Успішна авторизація
       const user = userCredential.user;
       console.log('Successful user login:', user);
       notiflix.Notify.Success('Successful login!');
@@ -70,7 +69,6 @@ signinButton.addEventListener('click', () => {
       startButton.innerText = `Start (${email})`;
     })
     .catch(error => {
-      // Помилка авторизації
       const errorCode = error.code;
       const errorMessage = error.message;
       console.error('User not found', errorCode, errorMessage);
@@ -93,7 +91,6 @@ signupButton.addEventListener('click', () => {
 
   createUserWithEmailAndPassword(auth, email, password)
     .then(userCredential => {
-      // Успішна реєстрація
       const user = userCredential.user;
       console.log('Successful user registration:', user);
       notiflix.Notify.Success(
@@ -102,7 +99,6 @@ signupButton.addEventListener('click', () => {
       window.location.href = 'index.html';
     })
     .catch(error => {
-      // Помилка реєстрації
       const errorCode = error.code;
       const errorMessage = error.message;
       console.error('Error registering user:', errorCode, errorMessage);
