@@ -1,5 +1,9 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+} from 'firebase/auth';
 import notiflix from 'notiflix';
 
 const startButton = document.getElementById('start-button');
@@ -12,8 +16,8 @@ const signupContent = document.getElementById('signup-content');
 const backdropAuth = document.getElementById('backdropauth');
 
 startButton.addEventListener('click', () => {
-    modal.style.display = 'block';
-    backdropAuth.style.display = 'block';
+  modal.style.display = 'block';
+  backdropAuth.style.display = 'block';
 });
 
 close.addEventListener('click', () => {
@@ -32,9 +36,10 @@ signupTab.addEventListener('click', () => {
   signupContent.classList.add('show');
 });
 
+const API_KEY = import.meta.env.VITE_API_KEY;
 // Firebase configuration
 const firebaseConfig = {
-  apiKey: 'AIzaSyCWbs0N9AYzirIviZZUsVMIJ2enE8aYPbw',
+  apiKey: API_KEY,
   authDomain: 'bookstorecommunity.firebaseapp.com',
   projectId: 'bookstorecommunity',
   storageBucket: 'bookstorecommunity.appspot.com',
