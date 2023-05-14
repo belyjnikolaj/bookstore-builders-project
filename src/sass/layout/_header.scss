@@ -13,9 +13,10 @@
     }
 
     @media screen and (min-width: $tablet) {
-      margin-right: 24px;
+      margin-right: auto;
     }
     @media screen and (min-width: $desktop) {
+      margin-right: 24px;
     }
   }
 
@@ -93,7 +94,7 @@
   }
 
   @media screen and (min-width: $desktop) {
-    margin-right: 92px;
+    margin-right: 76px;
   }
 }
 
@@ -114,33 +115,44 @@
 
   @media screen and (min-width: $tablet) {
     display: block;
-    margin-right: 16px;
+    margin-right: 24px;
   }
   @media screen and (min-width: $desktop) {
-    margin-right: 40px;
   }
 }
 
 .nav-shopping-page {
   display: none;
   @media screen and (min-width: $tablet) {
-    display: block;
+    display: flex;
+    align-items: center;
     font-weight: 500;
     font-size: 14px;
-    line-height: 18px;
+    line-height: 1.27;
     letter-spacing: -0.04em;
-    margin-right: 4px;
+    gap: 4px;
   }
   @media screen and (min-width: $desktop) {
   }
 }
+.navigation {
+  @media screen and (min-width: $tablet) {
+    margin-right: 102px;
+  }
+  @media screen and (min-width: $desktop) {
+    margin-right: 746px;
+  }
+}
 
-.navigation-list {
+.nav-list {
   display: flex;
   align-items: center;
   @media screen and (min-width: $tablet) {
-    margin-right: auto;
   }
+}
+
+.nav-list__item {
+  gap: 40px;
 }
 
 .nav-shopping-page__icon {
@@ -150,15 +162,30 @@
 
   @media screen and (min-width: $tablet) {
     display: block;
+    cursor: pointer;
+    &:hover,
+    &:focus {
+      fill: $accent-text-light;
+    }
   }
 }
-
 .link-active {
+  @media screen and (min-width: $mobile) {
+  }
   @media screen and (min-width: $tablet) {
     font-weight: 700;
     font-size: 14px;
     line-height: 18px;
     letter-spacing: -0.04em;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 34px;
+    padding: 8px 16px;
+    background: $accent-text-dark;
+    border-radius: 36px;
+  }
+  @media screen and (min-width: $desktop) {
   }
 }
 .link {
@@ -168,5 +195,39 @@
   &:hover,
   &:focus &:active {
     color: $accent-text-light;
+  }
+}
+
+.login-thumb {
+  gap: 9px;
+
+  @media screen and (min-width: $mobile) {
+    display: none;
+  }
+
+  @media screen and (min-width: $tablet) {
+    padding: 15px 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 184px;
+    height: 45px;
+    left: 552px;
+    top: 14px;
+
+    background: $backdrop-popup;
+    border-radius: 36px;
+  }
+}
+
+.login-thumb__btn {
+  border: none;
+  background: none;
+  color: $primary-text-dark;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.04em;
+
+  @media screen and (min-width: $tablet) {
   }
 }
