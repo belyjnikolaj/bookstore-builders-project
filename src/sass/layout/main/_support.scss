@@ -100,8 +100,12 @@
   justify-content: center;
   align-items: center;
   margin-left: 16px;
-  width: 129px;
-  // object-fit: contain;
+  height: 32px;
+  // flex: none;
+  // order: 0;
+  // flex-grow: 0;
+
+  object-fit: contain;
   // color: #ffffff;
   // mix-blend-mode: luminosity;
   // filter: grayscale(100%);
