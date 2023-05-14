@@ -77,6 +77,8 @@
 // }
 
 import axios from 'axios';
+import BookAPI from './booksApi';
+console.log({BookAPI})
 
 const refs = {
   openModalCardBtn: document.querySelector(
@@ -139,7 +141,9 @@ const renderBooks = (data, refs) => {
 };
 
 const URL_API = 'https://books-backend.p.goit.global/books/';
-const bookId = '643282b1e85766588626a0dc';
+// const bookId = '643282b1e85766588626a0dc';
+const bookId = '643282b1e85766588626a085';
+
 
 function fetchBook() {
   axios
