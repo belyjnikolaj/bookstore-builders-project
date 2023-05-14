@@ -4,17 +4,26 @@
       <svg width="24" height="24">
         <use href="/src/images/sprite.svg#icon-logo"></use>
       </svg>
-      <p class="logo-name">Bookshelf</p>
-      <p class="home active-page">HOME</p>
-      <p class="shopping-list">SHOPPING LIST</p>
+      <a class="link" href="/src/index.html"
+        ><p class="logo-name">Bookshelf</p></a
+      >
+      <nav class="navigation-list">
+        <a class="link link-active" href="/src/index.html"
+          ><p class="nav-home-page">HOME</p></a
+        >
+        <a class="link" href="/src/shopping-list.html"
+          ><p class="nav-shopping-page">SHOPPING LIST</p></a
+        >
+        <svg class="nav-shopping-page__icon"><use href="/src/images/sprite.svg#icon-uil_cart"></svg>
+      </nav>
 
       <label class="switch">
-        <input type="checkbox" name="check" value="yes" />
+        <input class="js-color-switcher"type="checkbox" name="check" value="yes" />
         <span class="slider round"></span>
       </label>
       <button class="burger js-open-menu" type="button" aria-expanded="false">
         <svg width="28" height="28">
-          <use href="/src/images/sprite.svg#icon-close"></use>
+          <!-- <use href="/src/images/sprite.svg#icon-close"></use> -->
           <use href="/src/images/sprite.svg#icon-burger"></use>
         </svg>
       </button>
