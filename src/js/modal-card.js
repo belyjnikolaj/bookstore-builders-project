@@ -1,4 +1,6 @@
 // import axios from 'axios';
+// import { BookAPI } from './booksApi';
+// console.log({ BookAPI });
 
 // const refs = {
 //   openModalCardBtn: document.querySelector(
@@ -53,7 +55,7 @@
 //       <li><a href="${bookshopLink.url}">${bookshopLink.name}</a></li>
 //       <li><a href="${appleBooksLink.url}">${appleBooksLink.name}</a></li>
 //     </ul>
-//     <button class="add-shopping-list" type="button">Add to Shopping List</button>
+//     <button class="button-add-shopping-list" type="button">Add to Shopping List</button>
 
 //   `;
 
@@ -61,7 +63,8 @@
 // };
 
 // const URL_API = 'https://books-backend.p.goit.global/books/';
-// const bookId = '643282b1e85766588626a0dc';
+// // const bookId = '643282b1e85766588626a0dc';
+// const bookId = '643282b1e85766588626a085';
 
 // function fetchBook() {
 //   axios
@@ -77,8 +80,15 @@
 // }
 
 import axios from 'axios';
-import BookAPI from './booksApi';
-console.log({BookAPI})
+import { BookAPI } from './booksApi';
+
+console.log({ BookAPI });
+
+const bookApi = new BookAPI();
+
+const URL_API = 'https://books-backend.p.goit.global/books/';
+// const bookId = '643282b1e85766588626a0dc';
+const bookId = '643282b1e85766588626a085';
 
 const refs = {
   openModalCardBtn: document.querySelector(
@@ -97,7 +107,13 @@ let isModalOpen = false;
 function openModalCard() {
   if (!isModalOpen) {
     toggleModal();
-    fetchBook();
+    const data = bookApi
+      .fetchBook(bookId)
+      .then(data => renderBooks(data, refs))
+      .catch(e => console.log(e));
+    // console.log({ data });
+    // renderBooks(data, refs);
+
     isModalOpen = true;
   }
 }
@@ -117,17 +133,19 @@ function clearModalContent() {
 }
 
 const renderBooks = (data, refs) => {
-  const amazonLink = data.buy_links.find(link => link.name === 'Amazon');
-  const bookshopLink = data.buy_links.find(link => link.name === 'Bookshop');
-  const appleBooksLink = data.buy_links.find(
+
+  const book = data.data
+  const amazonLink = book.buy_links.find(link => link.name === 'Amazon');
+  const bookshopLink = book.buy_links.find(link => link.name === 'Bookshop');
+  const appleBooksLink = book.buy_links.find(
     link => link.name === 'Apple Books'
   );
 
   const bookElMarkup = `
-    <img class="modal-card_img" src="${data.book_image}" alt="${data.title}" />
-    <h3 class="modal-card_title">${data.title}</h3>
-    <p class="modal-card_author">${data.author}</p>
-    <p class="modal-card_desq">${data.description}</p>
+    <img class="modal-card_img" src="${book.book_image}" alt="${book.title}" />
+    <h3 class="modal-card_title">${book.title}</h3>
+    <p class="modal-card_author">${book.author}</p>
+    <p class="modal-card_desq">${book.description}</p>
     <ul class="shopping-list-links"> 
       <li><a href="${amazonLink.url}">${amazonLink.name}</a></li>
       <li><a href="${bookshopLink.url}">${bookshopLink.name}</a></li>
@@ -140,20 +158,15 @@ const renderBooks = (data, refs) => {
   refs.modalCard.insertAdjacentHTML('beforeend', bookElMarkup);
 };
 
-const URL_API = 'https://books-backend.p.goit.global/books/';
-// const bookId = '643282b1e85766588626a0dc';
-const bookId = '643282b1e85766588626a085';
-
-
-function fetchBook() {
-  axios
-    .get(`${URL_API}${bookId}`)
-    .then(response => {
-      const data = response.data;
-      renderBooks(data, refs);
-      console.log({ data });
-    })
-    .catch(error => {
-      console.log('Error:', error);
-    });
-}
+// function fetchBook() {
+//   axios
+//     .get(`${URL_API}${bookId}`)
+//     .then(response => {
+//       const data = response.data;
+//       renderBooks(data, refs);
+//       console.log({ data });
+//     })
+//     .catch(error => {
+//       console.log('Error:', error);
+//     });
+// }
