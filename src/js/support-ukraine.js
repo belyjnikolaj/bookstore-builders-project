@@ -68,6 +68,8 @@ const swiper = new Swiper('.swiper-container', {
   navigation: {
     nextEl: '.swiper-button-next',
   },
+  direction: 'vertical',
+  slidesPerView: 3,
 });
 
 export { supportUkraine };
