@@ -1,0 +1,40 @@
+<header class="header">
+  <div class="container">
+    <a href="./index.html">Bookshelf</a>
+
+    <nav class="navigation">
+      <ul class="navigation__list">
+        <li class="item navigation__item">
+          <a
+            href="./index.html"
+            class="navigation__link navigation__link--current"
+            >Home</a
+          >
+        </li>
+        <li class="item navigation__item">
+          <a href="./shopping-list.html" class="navigation__link"
+            >Shopping list</a
+          >
+          <svg class="icon" width="20" height="20">
+            <use href="./images/sprite.svg#icon-lock"></use>
+          </svg>
+        </li>
+      </ul>
+    </nav>
+
+    <button class="dark-theme__toggle">
+      <img src="./images/header/switcher-off.png" alt="Switcher-off" />
+    </button>
+
+    <button
+      class="mobile-menu__toggle"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <svg width="28" height="28">
+        <use href="./images/sprite.svg#icon-align-left"></use>
+      </svg>
+    </button>
+    <div class="login-thumb"></div>
+  </div>
+</header>
