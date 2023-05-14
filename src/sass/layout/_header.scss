@@ -1,19 +1,233 @@
-.section-header {
+.header-conteiner {
+  border: 1.5px solid #111111;
+  border-radius: 0px 0px 8px 8px;
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+
+    @media screen and (min-width: $mobile) {
+      margin-right: auto;
+    }
+
+    @media screen and (min-width: $tablet) {
+      margin-right: auto;
+    }
+    @media screen and (min-width: $desktop) {
+      margin-right: 24px;
+    }
+  }
+
+  .switch input {
+    display: none;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, #4f2ee8 0%, #dcdcdc 100%);
+    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: '';
+    height: 19px;
+    width: 19px;
+    left: 1px;
+    bottom: 0.5px;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+
+  input:checked + .slider {
+    background: linear-gradient(180deg, #4f2ee8 0%, #686868 100%);
+    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(20px);
+  }
+
+  .slider.round {
+    border-radius: 34px;
+  }
+
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
   @media screen and (min-width: $mobile) {
     width: $mobile;
+    padding: 18px 20px;
   }
 
   @media screen and (min-width: $tablet) {
-    padding-right: 32px;
-    padding-left: 32px;
+    padding: 14px 32px;
 
     width: $tablet;
   }
 
   @media screen and (min-width: $desktop) {
     padding-right: 24px;
-    padding-left: 24px;
+    padding: 14px 24px;
 
     width: $desktop;
+  }
+}
+
+.logo-name {
+  @media screen and (min-width: $mobile) {
+    margin-right: 144px;
+  }
+  @media screen and (min-width: $tablet) {
+    margin-right: 40px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-right: 76px;
+  }
+}
+
+.header-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.burger {
+  background-color: transparent;
+  @media screen and (min-width: $tablet) {
+    display: none;
+  }
+}
+
+.nav-home-page {
+  display: none;
+
+  @media screen and (min-width: $tablet) {
+    display: block;
+    margin-right: 24px;
+  }
+  @media screen and (min-width: $desktop) {
+  }
+}
+
+.nav-shopping-page {
+  display: none;
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.27;
+    letter-spacing: -0.04em;
+    gap: 4px;
+  }
+  @media screen and (min-width: $desktop) {
+  }
+}
+.navigation {
+  @media screen and (min-width: $tablet) {
+    margin-right: 102px;
+  }
+  @media screen and (min-width: $desktop) {
+    margin-right: 746px;
+  }
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  @media screen and (min-width: $tablet) {
+  }
+}
+
+.nav-list__item {
+  gap: 40px;
+}
+
+.nav-shopping-page__icon {
+  display: none;
+  height: 20px;
+  width: 20px;
+
+  @media screen and (min-width: $tablet) {
+    display: block;
+    cursor: pointer;
+    &:hover,
+    &:focus {
+      fill: $accent-text-light;
+    }
+  }
+}
+.link-active {
+  @media screen and (min-width: $mobile) {
+  }
+  @media screen and (min-width: $tablet) {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.04em;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 34px;
+    padding: 8px 16px;
+    background: $accent-text-dark;
+    border-radius: 36px;
+  }
+  @media screen and (min-width: $desktop) {
+  }
+}
+.link {
+  text-decoration: none;
+  color: $primary-text-light;
+  cursor: pointer;
+  &:hover,
+  &:focus &:active {
+    color: $accent-text-light;
+  }
+}
+
+.login-thumb {
+  gap: 9px;
+
+  @media screen and (min-width: $mobile) {
+    display: none;
+  }
+
+  @media screen and (min-width: $tablet) {
+    padding: 15px 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 184px;
+    height: 45px;
+    left: 552px;
+    top: 14px;
+
+    background: $backdrop-popup;
+    border-radius: 36px;
+  }
+}
+
+.login-thumb__btn {
+  border: none;
+  background: none;
+  color: $primary-text-dark;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.04em;
+
+  @media screen and (min-width: $tablet) {
   }
 }
