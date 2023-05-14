@@ -50,7 +50,7 @@
 //     <h3 class="modal-card_title">${data.title}</h3>
 //     <p class="modal-card_author">${data.author}</p>
 //     <p class="modal-card_desq">${data.description}</p>
-//     <ul class="shopping-list-links"> 
+//     <ul class="shopping-list-links">
 //       <li><a href="${amazonLink.url}">${amazonLink.name}</a></li>
 //       <li><a href="${bookshopLink.url}">${bookshopLink.name}</a></li>
 //       <li><a href="${appleBooksLink.url}">${appleBooksLink.name}</a></li>
@@ -94,9 +94,10 @@ const refs = {
   openModalCardBtn: document.querySelector(
     'button[name="data-modal-card-open"]'
   ),
-  modalCard: document.querySelector('#data-modal-card'),
+  // modalCard: document.querySelector('#data-modal-card'),
+  modalCard: document.querySelector('.modal-card'),
+
   closeModalCardBtn: document.querySelector('.modal-card_close'),
-  modalCardForm: document.querySelector('.modal-card-form'),
 };
 
 refs.openModalCardBtn.addEventListener('click', openModalCard);
@@ -115,6 +116,7 @@ function openModalCard() {
     // renderBooks(data, refs);
 
     isModalOpen = true;
+    refs.openModalCardBtn.style.display = 'none';
   }
 }
 
@@ -133,8 +135,7 @@ function clearModalContent() {
 }
 
 const renderBooks = (data, refs) => {
-
-  const book = data.data
+  const book = data.data;
   const amazonLink = book.buy_links.find(link => link.name === 'Amazon');
   const bookshopLink = book.buy_links.find(link => link.name === 'Bookshop');
   const appleBooksLink = book.buy_links.find(
@@ -142,17 +143,19 @@ const renderBooks = (data, refs) => {
   );
 
   const bookElMarkup = `
-    <img class="modal-card_img" src="${book.book_image}" alt="${book.title}" />
-    <h3 class="modal-card_title">${book.title}</h3>
-    <p class="modal-card_author">${book.author}</p>
-    <p class="modal-card_desq">${book.description}</p>
-    <ul class="shopping-list-links"> 
-      <li><a href="${amazonLink.url}">${amazonLink.name}</a></li>
-      <li><a href="${bookshopLink.url}">${bookshopLink.name}</a></li>
-      <li><a href="${appleBooksLink.url}">${appleBooksLink.name}</a></li>
-    </ul>
-    <button class="add-shopping-list" type="button">Add to Shopping List</button>
-
+  <div class="modal-card-div">
+  <img class="modal-card_img" src="${book.book_image}" alt="${book.title}" />
+  <h3 class="modal-card_title">${book.title}</h3>
+  <p class="modal-card_author">${book.author}</p>
+  <p class="modal-card_desq">${book.description}</p>
+  <ul class="shopping-list-links"> 
+    <li><a href="${amazonLink.url}">${amazonLink.name}</a>
+    <img class="img-amazon" src="./images/modal-card-amazon.png" alt=""></li>
+    <li><a href="${bookshopLink.url}">${bookshopLink.name}</a></li>
+    <li><a href="${appleBooksLink.url}">${appleBooksLink.name}</a></li>
+  </ul>
+  <button class="button-add-shopping-list btn-modal-card" type="button">Add to Shopping List</button>
+  </div>
   `;
 
   refs.modalCard.insertAdjacentHTML('beforeend', bookElMarkup);
