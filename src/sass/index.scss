@@ -1,11 +1,8 @@
-
 @import './abstracts/variables';
 @import './abstracts/mixins';
 @import './abstracts/placeholder';
 @import './abstracts/modal-button';
 @import './abstracts/modal-card';
-
-
 
 @import './base/fonts';
 @import './base/base';
@@ -18,5 +15,5 @@
 @import './layout/main/shopping-list';
 @import './layout/main/support';
 @import './layout/header';
-
+@import './layout/modal-registration';
 @import './utils/breakpoints';
