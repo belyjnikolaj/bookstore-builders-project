@@ -1,6 +1,8 @@
 
 import axios from 'axios';
 
+import { openModalCard } from './modal-card';
+
 const bestSellersGal = document.querySelector('.js-best-sellers');
 let booksPerList = 1;
  let width = window.innerWidth;
@@ -25,15 +27,23 @@ async function fetchBestSellers() {
   console.log(resp);
   return resp;
 }
+// fetchBestSellers()
+//   .then(data => bestSellersGal.insertAdjacentHTML('beforeend',createMarkupBooksCategories(data)))
+//   .catch(err => console.log(err));
+// Viktoriia added //
 fetchBestSellers()
-  .then(data => bestSellersGal.insertAdjacentHTML('beforeend',createMarkupBooksCategories(data)))
+  .then(data => {
+    bestSellersGal.insertAdjacentHTML('beforeend', createMarkupBooksCategories(data));
+    addClickListeners();
+  })
   .catch(err => console.log(err));
+// Viktoriia added //
 
 function createMarkupBooksCategories(arr) {
-  return arr.map(({ list_name, books }) =>  
+  return arr.map(({ list_name, books, _id }) =>  
   `<div><ul class="books_list_category">
         <li><p class="category_name">${list_name}</p><ul class="books_row">${books.slice(0, booksPerList).map(({ book_image, title, author, _id, }) => ` <a href="#" class="modal_popap" target="_self">
-          <div class="book-card">
+          <div class="book-card" onclick="openModalCard(${_id})">
               <div class="book-card__img-box">
                 <img class="book-card__img"src="${book_image}" alt="${title}" loading="lazy />
               </div>
@@ -48,7 +58,19 @@ function createMarkupBooksCategories(arr) {
     </div>`
   ).join('');
 }
- 
+ // Viktoriia added //
+
+function addClickListeners() {
+  const bookCards = document.querySelectorAll('.book-card');
+  bookCards.forEach(card => {
+    const id = card.querySelector('.visually-hidden').textContent;
+    card.addEventListener('click', () => {
+      openModalCard(id);
+    });
+  });
+}
+// Viktoriia added //
+
 export {fetchBestSellers };
 
 //  return bestSellersGal.innerHTML = markupBooksList(data).join('');
