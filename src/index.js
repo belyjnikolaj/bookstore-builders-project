@@ -1,3 +1,4 @@
+
 import { fetchBestSellers } from './js/best-selling-books';
 import { supportUkraine } from './js/support-ukraine';
 
@@ -8,7 +9,7 @@ import { fetchBestSellers } from './js/best-selling-books';
 import { toggleModal } from './js/modal-registration';
 
 supportUkraine();
-createHero();
+
 fetchBestSellers()
   .then(data =>
     bestSellersGal.insertAdjacentHTML(

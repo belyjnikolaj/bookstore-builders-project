@@ -1,0 +1,147 @@
+.books_hero_title {
+    padding-top: 40px;
+    margin: 0;
+    font-family: DM Sans;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 38px;
+    letter-spacing: -0.04em;
+    text-align: left;
+}
+
+.books_hero_title--color_accent {
+    color: #4F2EE8;
+}
+
+.books_list_category {
+    display: flex;
+    padding-top: 40px;
+    flex-direction: column;
+}
+.category_name{
+    padding-bottom: 18px;
+    font-family: 'DM Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18px;
+    
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+    
+        color: #B4AFAF;
+}
+.books_row {
+    display: flex;
+    padding: 0;
+    gap: 25px;
+    justify-content: center;
+    flex-direction: row;
+    list-style-type: none;
+}
+
+.book-card {
+    display: inline-block;
+}
+
+.book-card__img {
+    height: 485px;
+    width: 335px;
+    margin: 0;
+    border-radius: 8px;
+}
+
+.category_name {
+    font-family: DM Sans;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0.03em;
+    text-align: left;
+}
+
+
+
+.info-author__item {
+    padding-bottom: 8px;
+    font-family: DM Sans;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: -0.04em;
+    text-align: left;
+    color: #B4AFAF;
+
+}
+
+.info-title__item {
+    margin-block-end: 0px;
+    margin: 0;
+    width: 335px;
+    padding-top: 14px;
+    padding-bottom: 4px;
+    color: #111111;
+    font-family: DM Sans;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: -0.04em;
+    text-align: left;
+}
+
+.books-category-btn {
+    height: 46px;
+    width: 124px;
+    border-radius: 40px;
+    border: 2px solid #4F2EE8;
+    padding: 14px 28px;
+    font-family: DM Sans;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    text-align: left;
+    background-color: inherit;
+    color: #111111;
+    text-transform: uppercase;
+    align-self: flex-end;
+    flex-grow: 0;
+    white-space: nowrap;
+}
+.cut-text {
+    text-overflow: ellipsis; // обрізання довгих блоків з текстом
+    overflow: hidden; // приховати текст, що виходить за межі блоку
+    width: 75%; // ширина блоку з текстом
+    white-space: nowrap; // заборона на перенесення тексту
+}
+
+ @media screen and (min-width: $tablet) {
+     .books_hero_title {
+         padding-top: 100px;
+     }
+     .info-author__item{
+        padding-bottom: 20px;
+     }
+
+         .book-card__img {
+            width: 218px;
+            height: 316px;
+         }
+ }
+
+  @media screen and (min-width: $desktop) {
+    .books_hero_title {
+            padding-top: 40px;
+        }
+  .info-author__item {
+      padding-bottom: 32px;
+  }
+         .book-card__img {
+            height: 256px;
+                width: 180px;
+         }
+         
+  }
+  
+ 
