@@ -13,4 +13,10 @@ export class BookAPI {
  async fetchTopBooks() {
     return await axios.get(`${this.#BASE_URL}${this.#TOP_BOOKS}`);
   }
+  async fetchBook(bookId) {
+    console.log({ bookId });
+    return await axios.get(`${this.#BASE_URL}/${bookId}`);
+  }
 }
+
+
