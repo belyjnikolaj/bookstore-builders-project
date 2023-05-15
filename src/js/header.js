@@ -1,7 +1,9 @@
+import { darkMode } from './dark';
+
 const colorSwitcher = document.querySelector('.js-color-switcher');
 
-console.log(colorSwitcher);
+// console.log(colorSwitcher);
 
-colorSwitcher.addEventListener('check', onClick);
+colorSwitcher.addEventListener('click', darkMode);
 
 export { header };

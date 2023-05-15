@@ -7,6 +7,7 @@ import { modalCard } from './js/modal-card';
 import { fetchBestSellers } from './js/best-selling-books';
 
 supportUkraine();
+header();
 
 fetchBestSellers()
   .then(data =>
