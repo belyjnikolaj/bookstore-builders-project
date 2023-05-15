@@ -26,12 +26,12 @@ refs.closeModalCardBtn.addEventListener('click', closeModalCard);
 let isModalOpen = false;
 
 export function openModalCard(bookId) {
-  console.log({ bookId });
+  console.log({bookId})
   if (!isModalOpen) {
     toggleModal();
     isModalOpen = true;
     refs.openModalCardBtn.style.display = 'none';
-    return bookApi
+return bookApi
       .fetchBook(bookId)
       .then(data => renderBooks(data, refs))
       .catch(e => console.log(e));
@@ -95,3 +95,30 @@ document.addEventListener('keydown', function (event) {
   }
 });
 
+// function fetchBook() {
+//   axios
+//     .get(`${URL_API}${bookId}`)
+//     .then(response => {
+//       const data = response.data;
+//       renderBooks(data, refs);
+//       console.log({ data });
+//     })
+//     .catch(error => {
+//       console.log('Error:', error);
+//     });
+// }
+
+
+// export function openModalCard() {
+//   if (!isModalOpen) {
+//     refs.modalCardBackDrop.style.display = 'block';
+//     refs.modalCard.style.display = 'block';
+//     const data = bookApi
+//       .fetchBook(bookId)
+//       .then((data) => renderBooks(data, refs))
+//       .catch((e) => console.log(e));
+
+//     isModalOpen = true;
+//     refs.openModalCardBtn.style.display = 'none';
+//   }
+// }

@@ -75,7 +75,7 @@ function addClickListeners() {
 }
 // Viktoriia added //
 
-export {fetchBestSellers };
+ export {fetchBestSellers };
 
 //  return bestSellersGal.innerHTML = markupBooksList(data).join('');
 // };
