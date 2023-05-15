@@ -18,7 +18,9 @@ function viewPort() {
     booksPerList = 5;
   }
 }
+
 viewPort();
+
 
 
 
@@ -79,7 +81,7 @@ export { fetchBestSellers };
 bestSellersGal.addEventListener('click', handleCategoryBtnClick);
 
 function  handleCategoryBtnClick(evt) {
-  const btnCategory = evt.currentTarget.classList.contains('${}');
+  const btnCategory = evt.currentTarget.textContent.contains();
   console.log(btnCategory);
   
 }
