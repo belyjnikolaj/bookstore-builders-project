@@ -11,33 +11,44 @@
   overflow-y: scroll;
 }
 
-// .modal-card_backdrop {
-//   opacity: 0;
-//   pointer-events: none;
-//   visibility: visible;
-// }
 .modal-card {
   max-width: 335px;
   width: 100%;
   margin: 0 auto;
   padding: 24px 40px;
-  // transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   position: absolute;
   top: 0;
   left: 50%;
-  // transform: translateX(-50%) scale(1);
+  transform: translateX(-50%) scale(1);
   background-color: $header-bgc-light;
+
+  @media screen and (min-width: $tablet) {
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    max-width: 579px;
+    padding: 40px;
+    display: block;
+    height: 465px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: $tablet;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    max-width: 579px;
+    padding: 40px;
+  }
 }
 
 .modal-card_close-icon {
   fill: black;
 }
 
-.moda-card-div {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.modal-card-div {
+  @media screen and (min-width: $tablet) {
+    display: flex;
+  }
 }
 .modal-card_close {
   background-color: #0000;
@@ -47,8 +58,8 @@
   padding: 0;
   display: flex;
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: 18px;
+  right: 18px;
 }
 
 .modal-card_img {
@@ -56,6 +67,14 @@
   max-width: 287px;
   width: 100%;
   margin-bottom: 14px;
+  border-radius: 8px;
+
+  @media screen and (min-width: $tablet) {
+    max-width: 192px;
+    width: 100%;
+    height: 281px;
+    margin-bottom: 40px;
+  }
 }
 
 .modal-card_title {
@@ -66,6 +85,14 @@
   color: $header-bgc-dark;
   letter-spacing: 0.04em;
   margin-bottom: 4px;
+
+  @media screen and (min-width: $tablet) {
+    font-family: 'DM Sans';
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.17;
+    margin-bottom: 8px;
+  }
 }
 
 .modal-card_author {
@@ -76,6 +103,17 @@
   color: $secondary-text;
   font-family: $font-main;
   margin-bottom: 18px;
+
+  @media screen and (min-width: $tablet) {
+    font-family: 'DM Sans';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.29;
+    letter-spacing: -0.04em;
+    margin-bottom: 20px;
+    color: $secondary-text;
+  }
 }
 
 .modal-card_desq {
@@ -83,20 +121,39 @@
   font-size: 14px;
   line-height: 1.29;
   color: $header-bgc-dark;
-  width: 287px;
+  max-width: 287px;
+  width: 100%;
   margin-bottom: 16px;
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 20px;
+  }
+}
+
+.modal-card-info {
+  display: block;
+
+  @media screen and (min-width: $tablet) {
+    max-width: 279px;
+    width: 100%;
+    margin-left: 24px;
+  }
 }
 
 .button-add-shopping-list {
   border: 2px solid #4f2ee8;
   border-radius: 40px;
   height: 46px;
-  // margin: 0 auto;
-  // display: block;
+  margin: auto;
+  display: block;
   min-width: 211px;
   padding: 14px 28px;
   background-color: $header-bgc-light;
   cursor: pointer;
+
+  @media screen and (min-width: $tablet) {
+    min-width: 499px;
+  }
 }
 
 .btn-modal-card {
@@ -110,34 +167,18 @@
 
 .shopping-list-links {
   margin-bottom: 40px;
+  display: flex;
+  gap: 20px;
 }
 
-// .modal-card_backdrop.is-hidden {
-//   opacity: 0;
-//   pointer-events: none;
-//   visibility: visible;
+.img-amazon {
+  mix-blend-mode: luminosity;
+}
+
+// .modal-card_backdrop {
+//   display: none;
 // }
 
-//   .modal-card-desq {
-//     @media screen and (min-width: $tablet) {
-//       padding-right: 32px;
-//       padding-left: 32px;
-
-//       width: $tablet;
-//     }
-//   }
-
-//   .modal-card-desq {
-//     @media screen and (min-width: $desktop) {
-//       padding-right: 24px;
-//       padding-left: 24px;
-
-//       width: $desktop;
-//     }
-//   }
-// }
-
-// .img-amazon {
-//   mix-blend-mode: luminosity;
-//   fill: white;
+// .modal-card {
+//   display: none;
 // }
