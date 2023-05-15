@@ -154,10 +154,10 @@ input:checked + .slider:before {
   @media screen and (min-width: $tablet) {
     display: block;
     cursor: pointer;
-    &:hover,
-    &:focus {
-      fill: $accent-text-light;
-    }
+    // &:hover,
+    // &:focus {
+    //   fill: $accent-text-light;
+    // }
   }
 }
 .link-active {

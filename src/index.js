@@ -1,4 +1,6 @@
+
 import { toggleModal } from './js/modal-registration';
+
 import { fetchBestSellers } from './js/best-selling-books';
 import { supportUkraine } from './js/support-ukraine';
 
@@ -9,6 +11,7 @@ import { fetchCategories } from './js/categories-list-list';
 fetchCategories();
 
 supportUkraine();
+header();
 
 fetchBestSellers()
   .then(data =>
