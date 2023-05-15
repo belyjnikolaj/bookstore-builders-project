@@ -1,6 +1,6 @@
 .support {
   position: relative;
-  width: 335px;
+  max-width: 335px;
   height: 352px;
   padding-top: 24px;
   padding-left: 40px;
@@ -87,7 +87,7 @@
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
-  line-height: 18px;
+  line-height: 1.28;
   display: flex;
   align-items: flex-start;
   letter-spacing: -0.04em;
@@ -101,12 +101,5 @@
   align-items: center;
   margin-left: 16px;
   height: 32px;
-  // flex: none;
-  // order: 0;
-  // flex-grow: 0;
-
   object-fit: contain;
-  // color: #ffffff;
-  // mix-blend-mode: luminosity;
-  // filter: grayscale(100%);
 }
