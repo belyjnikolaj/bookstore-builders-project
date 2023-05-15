@@ -1,0 +1,101 @@
+.books_list_category {
+    display: flex;
+    padding: 0;
+    flex-direction: column;
+    list-style-type: none;
+}
+
+.books_row {
+    display: flex;
+    padding: 0;
+    justify-content: center;
+    flex-direction: row;
+    list-style-type: none;
+}
+
+.book-card {
+    display: inline-block;
+}
+
+.book-card__img {
+    height: 485px;
+    width: 335px;
+    left: 0px;
+    top: 0px;
+    border-radius: 8px;
+}
+
+.visually-hidden {
+    display: none;
+}
+
+.category_name {
+    font-family: DM Sans;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0.03em;
+    text-align: left;
+}
+
+.books_hero_title {
+    font-family: DM Sans;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 38px;
+    letter-spacing: -0.04em;
+    text-align: left;
+}
+
+.books_hero_title--color_accent {
+    color: #4F2EE8;
+}
+
+.info-author__item {
+    font-family: DM Sans;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: -0.04em;
+    text-align: left;
+    color: #B4AFAF;
+}
+
+.info-title__item {
+    color: #111111;
+    font-family: DM Sans;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: -0.04em;
+    text-align: left;
+}
+
+.book-card-btn {
+    height: 46px;
+    width: 124px;
+
+    border-radius: 40px;
+    padding: 14px 28px 14px 28px;
+}
+
+.book-card-btn {
+    height: 46px;
+    width: 124px;
+
+    border-radius: 40px;
+    padding: 14px 28px 14px 28px;
+    font-family: DM Sans;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: -0.01em;
+    text-align: left;
+    color: #111111;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}

@@ -1,51 +1,80 @@
-import Notiflix from 'notiflix';
+
 import axios from 'axios';
 
 const bestSellersGal = document.querySelector('.js-best-sellers');
+let booksPerList = 1;
+ let width = window.innerWidth;
+
+
+function createHero() {
+  if (width <= 768) {
+    booksPerList = 1;
+  } else if (width > 768 && width < 1440) {
+    booksPerList = 3;
+  } else {
+    booksPerList = 5;
+  }
+}
+createHero();
 
 
 async function fetchBestSellers() {
-  // const BASE_URL = 'https://books-backend.p.goit.global/';
-  // const END_POINT = `books/top-books`;
+  const BASE_URL = 'https://books-backend.p.goit.global/';
+  const END_POINT = `books/top-books`;
   const resp = await axios.get(`https://books-backend.p.goit.global/books/top-books`).then(response => response.data);
-   return resp;
+  console.log(resp);
+  return resp;
 }
+fetchBestSellers()
+  .then(data => bestSellersGal.insertAdjacentHTML('beforeend',createMarkupBooksCategories(data)))
+  .catch(err => console.log(err));
 
- fetchBestSellers().then(data => {
-   console.log(data);
-})
-  .catch(error => {
-       console.log(error);
-  Notiflix.Notify.failure('Oops, there is error');
-  });
+function createMarkupBooksCategories(arr) {
+  return arr.map(({ list_name, books }) =>  
+  `<div><ul class="books_list_category">
+        <li><p class="category_name">${list_name}</p><ul class="books_row">${books.slice(0, booksPerList).map(({ book_image, title, author, _id, }) => ` <a href="#" class="modal_popap" target="_self">
+          <div class="book-card">
+              <div class="book-card__img-box">
+                <img class="book-card__img"src="${book_image}" alt="${title}" loading="lazy />
+              </div>
+              <div class="info">
+                  <h3 class="info-title__item">${title}</h3>
+                  <p class="info-author__item">${author}</p>
+                  <p class = "visually-hidden">${_id}</p>
+              </div>
+          </div>
+      </a>`).join('')}</ul><button class="book-card-btn">see more</button></li>
+      </ul></div> 
+    </div>`
+  ).join('');
+}
+ 
+export {fetchBestSellers };
 
-  function markupBooksList(data) {
-    console.log(data);
-    data.map(obj => {
-      const { list_name, books } = obj;
-      const bookCard = books.map(book => {
-        markupBookCard(book);
-        console.log(book);
-    });
-    return `<div>
-            <h3">${list_name}</h3>
-                 <ul>${bookCard}
-                </ul>
-              <button>see more</button>
-        </div>`});
+//  return bestSellersGal.innerHTML = markupBooksList(data).join('');
+// };
+ 
+// //  fetchBestSellers().then(data => {
+// //    console.log(data);
+// // })
+// //   .catch(error => {
+// //        console.log(error);
+// //   Notiflix.Notify.failure('Oops, there is error');
+// //   });
+
+// function markupBooksList(data) {
+//   console.log(data);
+//   data.map(arr => {
+//     const { list_name, books } = arr;
+//    const bookCard = ;
+//     return `<div>
+//             <h3>${list_name}</h3>
+//                  <ul>
+//                 </ul>
+//               <button>see more</button>
+//         </div>`});
   
-function markupBookCard(book) {
-   const { author, book_image, title, _id, } = book;
-      return `<li><a>
-    <img src="${book_image}" alt="${author} ${title}" loading="lazy">
-    <div>
-    <p class="info-item__title">${title}</p>
-    <p class="info-item__author">${author}</p>
-    <p visually-hidden">${_id}</p>
-    </div>
-    </a>
-    </li>`;
-    };
+// }
 
-  };
-export { createHero };
+
+// createHero();
