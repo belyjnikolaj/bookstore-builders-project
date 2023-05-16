@@ -176,3 +176,4 @@ function addEventListeners() {
 addEventListeners(); // додаємо прослуховувачів подій
 
 fetchCategories();
+export { fetchCategories, createMarkupBooks };
