@@ -1,20 +1,16 @@
 import axios from 'axios';
 import { BookAPI } from './booksApi';
-// import amazonSvg from '../images/modal-card-amazon.svg';
 
 console.log({ BookAPI });
 
 const bookApi = new BookAPI();
 
 const URL_API = 'https://books-backend.p.goit.global/books/';
-// const bookId = '643282b1e85766588626a0dc';
-// const bookId = '643282b1e85766588626a085';
 
 const refs = {
   openModalCardBtn: document.querySelector(
     'button[name="data-modal-card-open"]'
   ),
-  // modalCard: document.querySelector('#data-modal-card'),
   modalCard: document.querySelector('.modal-card'),
 
   closeModalCardBtn: document.querySelector('.modal-card_close'),
@@ -44,12 +40,15 @@ function closeModalCard() {
 }
 
 function toggleModal() {
-  document.body.classList.toggle('modal-open');
-  refs.modalCard.classList.toggle('is-hidden');
+  const modalBackdrop = document.getElementById('data-modal-card');
+  modalBackdrop.classList.toggle('is-hidden');
 }
 
 function clearModalContent() {
-  refs.modalCard.innerHTML = '';
+  const modalCardInfo = document.querySelector('.modal-card-info');
+  if (modalCardInfo) {
+    modalCardInfo.innerHTML = '';
+  }
 }
 
 const renderBooks = (data, refs) => {
@@ -64,7 +63,6 @@ const renderBooks = (data, refs) => {
   <div class="modal-card-div">
   <img class="modal-card_img" src="${book.book_image}" alt="${book.title}" />
   <div class="modal-card-info">
-
   <h3 class="modal-card_title">${book.title}</h3>
   <p class="modal-card_author">${book.author}</p>
   <p class="modal-card_desq">${book.description}</p>
@@ -82,12 +80,6 @@ const renderBooks = (data, refs) => {
 
   refs.modalCard.insertAdjacentHTML('beforeend', bookElMarkup);
 };
-
-//  <a href="https://www.linkedin.com/in/nataliia-valko-951501212/" target="_blank" class="team-linkd">
-//     <svg width="24" height="24">
-//         <use href="${svgLinkdUrl}#icon-linkedin-svg"></use>
-//      </svg>
-//   </a>
 
 document.addEventListener('keydown', function (event) {
   if (event.key === 'Escape') {
