@@ -29,3 +29,10 @@
 .category-btn-dark {
   color: #ffffff !important;
 }
+.list-name-dark {
+  color: $categories-text-dark !important;
+  &:hover,
+  &:focus {
+    fill: $accent-text-dark !important;
+  }
+}

@@ -15,6 +15,9 @@ export function darkMode() {
   document.querySelectorAll('.info-title__item').forEach(element => {
     element.classList.toggle('dark-title');
   });
+  document.querySelectorAll('.list_name').forEach(element => {
+    element.classList.toggle('list-name-dark');
+  });
 }
 
 // const link = document.querySelectorAll('.link').forEach(element => {
