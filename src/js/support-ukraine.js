@@ -1,75 +1,55 @@
 import Swiper from 'swiper/swiper-bundle';
-import 'swiper/swiper-bundle.min.css';
+// import 'swiper/swiper-bundle.min.css';
+import { supportList } from './support-list';
 
 const list = document.querySelector('.swiper-wrapper');
 
-const supportList = [
-  {
-    title: 'Save the Children',
-    url: 'https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis',
-    img: null,
-  },
-  {
-    title: 'Project HOPE',
-    url: 'https://www.projecthope.org/country/ukraine/',
-    img: null,
-  },
-  {
-    title: 'UNITED24',
-    url: 'https://u24.gov.ua/uk',
-    img: null,
-  },
-  {
-    title: 'International Medical Corps',
-    url: 'https://internationalmedicalcorps.org/country/ukraine/',
-    img: null,
-  },
-  {
-    title: 'Medicins Sans Frontieres',
-    url: 'https://www.msf.org/ukraine',
-    img: null,
-  },
-  {
-    title: 'RAZOM',
-    url: 'https://www.razomforukraine.org/',
-    img: null,
-  },
-  {
-    title: 'Action against hunger',
-    url: 'https://www.actionagainsthunger.org/location/europe/ukraine/',
-    img: null,
-  },
-  {
-    title: 'World vision',
-    url: 'https://www.wvi.org/emergencies/ukraine',
-    img: null,
-  },
-  {
-    title: 'Serhiy Prytula Charity Foundation',
-    url: 'https://prytulafoundation.org/en',
-    img: null,
-  },
-];
-
 const supportUkraine = supportList
-  .map(({ title, url }, index) => {
-    const img = new URL(`${index + 1}.png?as=png&width=149`, import.meta.url);
+  .map(({ title, url, img }, index) => {
     return `
-       <div class="swiper-slide"> 0${index + 1}
-                    <a href="${url}"><img src="${img}" alt="${title}" /></a>
+       <div class="swiper-slide">0${index + 1}
+       <a href="${url}" target="_blank" rel="noreferrer noopener">
+       <img class="swiper-slide__img" src="${img}" alt="${title}" /></a>
                 </div>`;
   })
   .join(' ');
-
+// console.log(supportUkraine);
 list.insertAdjacentHTML('beforeend', supportUkraine);
 
 const swiper = new Swiper('.swiper-container', {
-  loop: true,
+  // настройки свайпера з поверненням в кінці до першого слайду
+  rewind: true,
+  slidesPerView: 4,
+  breakpoints: {
+    768: {
+      slidesPerView: 6,
+    },
+  },
+
   navigation: {
     nextEl: '.swiper-button-next',
   },
   direction: 'vertical',
-  slidesPerView: 3,
+  // настройки свайпера з безкінечною прокруткою
+  // але максимум 5 слайдів для одночасного показу
+  // loop: true,
+  // slidesPerView: 'auto',
+  // breakpoints: {
+  //   768: {
+  //     slidesPerView: 5,
+  //   },
+  // },
+  // loopedSlides: 4,
+
+  spaceBetween: 20,
+  // ----Accessibility-----
+  a11y: {
+    enabled: true,
+    containerMessage: 'list of charitable organizations',
+    firstSlideMessage: 'This is the first slide',
+    nextSlideMessage: 'Next slide',
+    paginationBulletMessage: 'Go to slide {{index}}',
+  },
 });
 
 export { supportUkraine };

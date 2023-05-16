@@ -5,19 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bookstore Builders</title>
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
     <link rel="stylesheet" href="./sass/index.scss" />
+
   </head>
+
   <body>
-    <div class="js-best-sellers best-sellers">
-    <h2 class="books_hero_title">
-      Best Sellers <span class="books_hero_title--color_accent">Books</span>
-    </h2>
-    </div>
     <include src="./partials/header.html"></include>
+    <include src="./partials/modal-registration.html"></include>
+    <div class="js-best-sellers best-sellers">
+      <h2 class="books_hero_title">
+        Best Sellers <span class="books_hero_title--color_accent">Books</span>
+      </h2>
+    </div>
     <include src="./partials/support-ukraine.html"></include>
     <include src="./partials/modal-card.html"></include>
-    <div class="js-best-sellers"></div>
+
+
+    <include src="./partials/categories-list-list.html"></include>
+    <include src="./partials/modal-card.html"></include>
     <script type="module" src="./index.js"></script>
-  </body> 
+  </body>
 </html>
 
