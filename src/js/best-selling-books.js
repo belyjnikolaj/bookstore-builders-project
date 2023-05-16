@@ -58,6 +58,17 @@ function createMarkupBooksCategories(arr) {
 // Viktoriia added //
 
 
+// function addClickListeners() {
+//   const bookCards = document.querySelectorAll('.book-card');
+//   bookCards.forEach(card => {
+//     const id = card.querySelector('.visually-hidden').textContent;
+//     card.addEventListener('click', () => {
+//       openModalCard(id);
+//     });
+//   });
+// }
+
+
 function addClickListeners() {
   const bookCards = document.querySelectorAll('.js-best-sellers');
   bookCards.forEach(card => {
@@ -70,10 +81,12 @@ function addClickListeners() {
 }
 
 
-export { fetchBestSellers };
 
-
-
+// function  handleCategoryBtnClick(evt) {
+//   const btnCategory = evt.currentTarget.textContent.contains();
+//   console.log(btnCategory);
+  
+// } 
 
 // РОЗРОЗБКА КНОПКИ ІГОРЕМ(ЩЕ НЕ ЗАВЕРШЕНО)
 bestSellersGal.addEventListener('click', handleCategoryBtnClick);
@@ -85,8 +98,8 @@ function handleCategoryBtnClick(evt) {
   
 }
   
-
-
+// createHero();
+export { fetchBestSellers };
 
 
 
