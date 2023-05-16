@@ -185,7 +185,7 @@ input:checked + .slider:before {
   cursor: pointer;
   &:hover,
   &:focus &:active {
-    color: $accent-text-light;
+    color: $accent-text-light ;
   }
 }
 
