@@ -29,7 +29,7 @@
 .call-to-registration-btn {
   display: none;
 }
-.header-conteiner {
+.header {
   border: 1.5px solid #111111;
   border-radius: 0px 0px 8px 8px;
   padding: 20px 20px;
@@ -162,7 +162,7 @@ input:checked + .slider:before {
   .burger {
     display: none;
   }
-  .header-conteiner {
+  .header {
     padding: 14px 32px;
   }
   .nav-list {
@@ -224,7 +224,7 @@ input:checked + .slider:before {
   }
 }
 @media screen and(min-width: $desktop) {
-  .header-conteiner {
+  .header {
     padding: 14px 24px;
   }
   .navigation {
