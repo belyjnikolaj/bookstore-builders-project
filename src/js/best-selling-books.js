@@ -143,6 +143,17 @@ function  handleCategoryBtnClick(evt) {
   
 }
 
+
+
+// function addClickListeners() {
+//   const bookCards = document.querySelectorAll('.book-card');
+//   bookCards.forEach(card => {
+//     const id = card.querySelector('.visually-hidden').textContent;
+//     card.addEventListener('click', () => {
+//       openModalCard(id);
+//     });
+//   });
+// }
 export { fetchBestSellers };
   
 
