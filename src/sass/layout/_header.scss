@@ -29,7 +29,7 @@
   cursor: pointer;
 }
 
-.login-registration-btn {
+.call-to-registration-btn {
   display: none;
 }
 
@@ -40,7 +40,7 @@
   position: relative;
 }
 
-.menu-conteiner-login {
+.menu-conteiner-account {
   display: none;
 }
 .switch {
@@ -157,7 +157,7 @@ input:checked + .slider:before {
 }
 
 // @media screen and (max-width: 767px) {
-//   .menu-conteiner-login {
+//   .menu-conteiner-account {
 //     display: none;
 //     position: fixed;
 //     top: 67px;
@@ -177,6 +177,9 @@ input:checked + .slider:before {
 //   }
 // }
 
+.call-to-registration-btn {
+  display: none;
+}
 @media screen and (min-width: $tablet) {
   .icon-close-menu {
     display: none;
@@ -227,7 +230,7 @@ input:checked + .slider:before {
     gap: 8px;
   }
 
-  .login-registration-btn {
+  .call-to-registration-btn {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -245,7 +248,7 @@ input:checked + .slider:before {
     letter-spacing: -0.04em;
     &:hover,
     &:focus {
-      transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+      transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     }
   }
 }
