@@ -1,13 +1,13 @@
-const colorSwitcher = document.querySelector('.js-color-switcher');
+// const colorSwitcher = document.querySelector('.js-color-switcher');
 
-console.log(colorSwitcher);
+// console.log(colorSwitcher);
 
-colorSwitcher.addEventListener('check', onClick);
+// colorSwitcher.addEventListener('check', onClick);
 
-function onClick(e) {
-  //     let menu = document.querySelector('.menu');
-  // menuBtn.addEventListener('click', function(){
-  menu.classList.toggle('active');
-}
+// function onClick(e) {
+//   //     let menu = document.querySelector('.menu');
+//   // menuBtn.addEventListener('click', function(){
+//   menu.classList.toggle('active');
+// }
 
-export { header };
+// export { header };
