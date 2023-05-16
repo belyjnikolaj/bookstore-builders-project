@@ -135,8 +135,6 @@ function addClickListeners() {
 }
 // export { fetchBestSellers };
 
-export { fetchBestSellers };
-  
 bestSellersGal.addEventListener('click', handleCategoryBtnClick);
 
 function  handleCategoryBtnClick(evt) {
@@ -144,6 +142,10 @@ function  handleCategoryBtnClick(evt) {
   console.log(btnCategory);
   
 }
+
+export { fetchBestSellers };
+  
+
 
 
 //  return bestSellersGal.innerHTML = markupBooksList(data).join('');
