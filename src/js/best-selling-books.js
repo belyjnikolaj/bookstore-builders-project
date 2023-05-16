@@ -49,7 +49,7 @@ function createMarkupBooksCategories(arr) {
                   <p class = "visually-hidden">${_id}</p>
               </div>
               </a>
-            </div>`).join('')}</ul><button class="books-category-btn" onсlick='fetchCategory(${list_name}>see more</button>
+            </div>`).join('')}</ul><button class="books-category-btn">see more</button>
       </div> 
     `
   ).join('');
@@ -82,23 +82,19 @@ function addClickListeners() {
 
 
 
-// function  handleCategoryBtnClick(evt) {
-//   const btnCategory = evt.currentTarget.textContent.contains();
-//   console.log(btnCategory);
-  
-// } 
+
 
 // РОЗРОЗБКА КНОПКИ ІГОРЕМ(ЩЕ НЕ ЗАВЕРШЕНО)
-bestSellersGal.addEventListener('click', handleCategoryBtnClick);
+// bestSellersGal.addEventListener('click', handleCategoryBtnClick);
 
-function handleCategoryBtnClick(evt) {
+// function handleCategoryBtnClick(evt) {
   
-  // const btnCategory = evt.target.textContent.contains();
-  console.log(evt);
+//   // const btnCategory = evt.target.textContent.contains();
+//   console.log(evt);
   
-}
-  
-// createHero();
+// }
+
+
 export { fetchBestSellers };
 
 
