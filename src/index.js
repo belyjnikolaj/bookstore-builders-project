@@ -1,4 +1,3 @@
-
 import { toggleModal } from './js/modal-registration';
 
 import { fetchBestSellers } from './js/best-selling-books';
@@ -21,4 +20,3 @@ fetchBestSellers()
     )
   )
   .catch(err => console.log(err));
-
