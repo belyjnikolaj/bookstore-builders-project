@@ -135,8 +135,6 @@ function addClickListeners() {
 }
 // export { fetchBestSellers };
 
-export { fetchBestSellers };
-  
 bestSellersGal.addEventListener('click', handleCategoryBtnClick);
 
 function  handleCategoryBtnClick(evt) {
@@ -144,6 +142,21 @@ function  handleCategoryBtnClick(evt) {
   console.log(btnCategory);
   
 }
+
+
+
+// function addClickListeners() {
+//   const bookCards = document.querySelectorAll('.book-card');
+//   bookCards.forEach(card => {
+//     const id = card.querySelector('.visually-hidden').textContent;
+//     card.addEventListener('click', () => {
+//       openModalCard(id);
+//     });
+//   });
+// }
+export { fetchBestSellers };
+  
+
 
 
 //  return bestSellersGal.innerHTML = markupBooksList(data).join('');
