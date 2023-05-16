@@ -7,48 +7,49 @@
     <title>Shopping List</title>
     <link rel="stylesheet" href="./sass/index.scss" />
   </head>
-  <body><header class="header-conteiner">
-    <div class="'conteiner">
-      <div class="header-wrap">
-        <svg width="24" height="24">
-          <use href="/src/images/sprite.svg#icon-logo"></use>
-        </svg>
-        <a class="link logo-name" href="/src/index.html"
-          >Bookshelf</a
-        >
-        <nav class="navigation">
-          <ul class="nav-list list">
-              <li nav-list__item><a class=" nav-home-page" href="/src/index.html">HOME</a>
-              </li>
-              <li nav-list__item><a class="link link link-active nav-shopping-page" href="/src/shopping-list.html">SHOPPING LIST<svg class="nav-shopping-page__icon"><use href="/src/images/sprite.svg#icon-uil_cart"></svg></a></li>  
-          </ul>
-        </nav>
-        <label class="switch">
-          <input class="js-color-switcher"type="checkbox" name="check" value="yes" />
-          <span class="slider round"></span>
-        </label>
-        <button class="burger js-open-menu" type="button" aria-expanded="false">
-          <svg width="28" height="28">
-            <!-- <use href="/src/images/sprite.svg#icon-close"></use> -->
-            <use href="/src/images/sprite.svg#icon-burger"></use>
+  <body>
+    <header class="header">
+      <div class="'conteiner">
+        <div class="header-wrap">
+          <svg width="24" height="24">
+            <use href="/src/images/sprite.svg#icon-logo"></use>
           </svg>
-        </button>
-        <div class="login-thumb">
-          <!-- <svg width="37" heigth="37">
-              <use href="/src/images/sprite.svg#icon-user"></use></svg> -->
-          <button class="login-thumb__btn" type="button">Sign up</button>
-          <svg width="20" heigth="20">
-              <use href="/src/images/sprite.svg#icon-arrow-right"></use>
-          </svg>
+          <a class="link logo-name" href="/src/index.html"
+            >Bookshelf</a
+          >
+          <nav class="navigation">
+            <ul class="nav-list list">
+                <li nav-list__item><a class=" nav-home-page" href="/src/index.html">HOME</a>
+                </li>
+                <li nav-list__item><a class="link link link-active nav-shopping-page" href="/src/shopping-list.html">SHOPPING LIST<svg class="nav-shopping-page__icon"><use href="/src/images/sprite.svg#icon-uil_cart"></svg></a></li>  
+            </ul>
+          </nav>
+          <label class="switch">
+            <input class="js-color-switcher"type="checkbox" name="check" value="yes" />
+            <span class="slider round"></span>
+          </label>
+          <button class="burger js-open-menu" type="button" aria-expanded="false">
+            <svg width="28" height="28">
+              <!-- <use href="/src/images/sprite.svg#icon-close"></use> -->
+              <use href="/src/images/sprite.svg#icon-burger"></use>
+            </svg>
+          </button>
+          <div class="login-thumb">
+            <!-- <svg width="37" heigth="37">
+                <use href="/src/images/sprite.svg#icon-user"></use></svg> -->
+            <button class="login-thumb__btn" type="button">Sign up</button>
+            <svg width="20" heigth="20">
+                <use href="/src/images/sprite.svg#icon-arrow-right"></use>
+            </svg>
+          </div>
         </div>
       </div>
-    </div>
   </header>
     
-   <div class="container">
+    <div class="container">
       <h2>Shopping <span class="list">List</span></h2>
       <div class="shopping-list"></div>
-      <div class="empty-list">
+     <div class="empty-list">
         <p class="empty-list__paragraph"></p>
         <div class="empty-list__image">
           <picture>
