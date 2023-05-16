@@ -124,6 +124,17 @@ function createMarkupBooksCategories(arr) {
 //   });
 // }
 
+// function addClickListeners() {
+//   const bookCards = document.querySelectorAll('.book-card');
+//   bookCards.forEach(card => {
+//     const id = card.querySelector('.visually-hidden').textContent;
+//     card.addEventListener('click', () => {
+//       openModalCard(id);
+//     });
+//   });
+// }
+
+
 function addClickListeners() {
   const bookCards = document.querySelectorAll('.book-card');
   bookCards.forEach(card => {
@@ -137,11 +148,11 @@ function addClickListeners() {
 
 bestSellersGal.addEventListener('click', handleCategoryBtnClick);
 
-function  handleCategoryBtnClick(evt) {
-  const btnCategory = evt.currentTarget.textContent.contains();
-  console.log(btnCategory);
+// function  handleCategoryBtnClick(evt) {
+//   const btnCategory = evt.currentTarget.textContent.contains();
+//   console.log(btnCategory);
   
-}
+// } 
 
 
 
@@ -186,4 +197,3 @@ export { fetchBestSellers };
 
 
 
-///////viktoriia May16
