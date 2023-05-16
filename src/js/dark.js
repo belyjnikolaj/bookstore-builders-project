@@ -8,8 +8,15 @@ export function darkMode() {
   document
     .querySelector('.nav-shopping-page__icon')
     .classList.toggle('icon-dark');
-  document
-    .querySelector('.books-category-btn')
-    .classList.toggle('category-btn-dark');
-  document.querySelector('.info-title__item').classList.toggle('dark-title');
+  document.querySelectorAll('.books-category-btn').forEach(element => {
+    element.classList.toggle('category-btn-dark');
+  });
+
+  document.querySelectorAll('.info-title__item').forEach(element => {
+    element.classList.toggle('dark-title');
+  });
 }
+
+// const link = document.querySelectorAll('.link').forEach(element => {
+//   element.classList.toggle('link-dark');
+// });
