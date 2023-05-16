@@ -223,8 +223,10 @@ input:checked + .slider:before {
     }
   }
 }
-@media screen and(min-width: $desktop) {
+
+@media screen and (min-width: $desktop) {
   .header {
+
     padding: 14px 24px;
   }
   .navigation {
