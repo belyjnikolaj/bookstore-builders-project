@@ -62,7 +62,7 @@
 </symbol>
 
 <symbol id="modal-card-close" viewBox="0 0 24 24">
-<path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m20.572 2.571-18 18M2.572 2.571l18 18"/></path>
+<path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m20.572 2.571-18 18M2.572 2.571l18 18"></path>
 </symbol>
 </defs>
 </svg>
