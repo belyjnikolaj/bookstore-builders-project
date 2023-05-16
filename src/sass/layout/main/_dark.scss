@@ -19,3 +19,51 @@
 .dark .nav-shopping-page {
   color: $primary-text-dark;
 }
+
+.dark .info-title__item {
+  color: $primary-text-dark;
+}
+
+.dark .books-category-btn {
+  color: $primary-text-dark;
+}
+
+.dark .list_name {
+  color: $categories-text-dark;
+  &:hover,
+  &:focus {
+    color: $accent-text-dark;
+  }
+}
+
+// .name__categore {
+//   font-weight: 700;
+//   font-size: 48px;
+//   line-height: 1.08;
+//   letter-spacing: -0.04em;
+
+//   color: primary-text-light;
+// }
+
+// .info-title__item {
+//   font-weight: 700;
+//   font-size: 16px;
+//   line-height: 1.125;
+//   letter-spacing: -0.04em;
+
+//   color: $primary-text-light;
+// }
+
+// .info-author__item {
+//   font-style: italic;
+//   font-size: 12px;
+//   line-height: 1.17;
+//   letter-spacing: -0.04em;
+
+//   color: $secondary-text;
+// }
+// .categories .list_name.selected {
+//   text-transform: uppercase;
+//   color: #4f2ee8;
+//   font-weight: 700;
+// }
