@@ -2,9 +2,9 @@ const menuLoginBtn = document.querySelector('#js-open-menu-btn');
 
 menuLoginBtn.addEventListener('click', evt => {
   evt.currentTarget.value;
-  console.log(evt.currentTarget.value);
 });
 
+console.log(menuLoginBtn);
 // const openMenuBtn = document.querySelector('#js-open-menu-btn');
 // const mobileMenu = document.querySelector('.js-menu-conteiner');
 // const closeMenuBtn = document.querySelector('.js-close-menu');
