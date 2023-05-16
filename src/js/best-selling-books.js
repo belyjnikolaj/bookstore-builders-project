@@ -76,16 +76,27 @@ function createMarkupBooksCategories(arr) {
     .join('');
 }
 
+// function addClickListeners() {
+//   const bookCards = document.querySelectorAll('.js-best-sellers');
+//   bookCards.forEach(card => {
+//     const id = card.querySelector('.visually-hidden').textContent;
+//     card.addEventListener('click', () => {
+//       openModalCard(id);
+//       document.getElementById('data-modal-card').classList.remove('is-hidden');
+//     });
+//   });
+// }
+
 function addClickListeners() {
-  const bookCards = document.querySelectorAll('.js-best-sellers');
+  const bookCards = document.querySelectorAll('.book-card');
   bookCards.forEach(card => {
     const id = card.querySelector('.visually-hidden').textContent;
     card.addEventListener('click', () => {
       openModalCard(id);
-      document.getElementById('data-modal-card').classList.remove('is-hidden');
     });
   });
 }
+
 
 export { fetchBestSellers };
 

@@ -1,20 +1,16 @@
 import axios from 'axios';
 import { BookAPI } from './booksApi';
-// import amazonSvg from '../images/modal-card-amazon.svg';
 
 console.log({ BookAPI });
 
 const bookApi = new BookAPI();
 
 const URL_API = 'https://books-backend.p.goit.global/books/';
-// const bookId = '643282b1e85766588626a0dc';
-// const bookId = '643282b1e85766588626a085';
 
 const refs = {
   openModalCardBtn: document.querySelector(
     'button[name="data-modal-card-open"]'
   ),
-  // modalCard: document.querySelector('#data-modal-card'),
   modalCard: document.querySelector('.modal-card'),
 
   closeModalCardBtn: document.querySelector('.modal-card_close'),
@@ -26,12 +22,12 @@ refs.closeModalCardBtn.addEventListener('click', closeModalCard);
 let isModalOpen = false;
 
 export function openModalCard(bookId) {
-  console.log({bookId})
+  console.log({ bookId });
   if (!isModalOpen) {
     toggleModal();
     isModalOpen = true;
     refs.openModalCardBtn.style.display = 'none';
-return bookApi
+    return bookApi
       .fetchBook(bookId)
       .then(data => renderBooks(data, refs))
       .catch(e => console.log(e));
@@ -44,12 +40,15 @@ function closeModalCard() {
 }
 
 function toggleModal() {
-  document.body.classList.toggle('modal-open');
-  refs.modalCard.classList.toggle('is-hidden');
+  const modalBackdrop = document.getElementById('data-modal-card');
+  modalBackdrop.classList.toggle('is-hidden');
 }
 
 function clearModalContent() {
-  refs.modalCard.innerHTML = '';
+  const modalCardInfo = document.querySelector('.modal-card-info');
+  if (modalCardInfo) {
+    modalCardInfo.innerHTML = '';
+  }
 }
 
 const renderBooks = (data, refs) => {
@@ -64,7 +63,6 @@ const renderBooks = (data, refs) => {
   <div class="modal-card-div">
   <img class="modal-card_img" src="${book.book_image}" alt="${book.title}" />
   <div class="modal-card-info">
-
   <h3 class="modal-card_title">${book.title}</h3>
   <p class="modal-card_author">${book.author}</p>
   <p class="modal-card_desq">${book.description}</p>
@@ -83,38 +81,9 @@ const renderBooks = (data, refs) => {
   refs.modalCard.insertAdjacentHTML('beforeend', bookElMarkup);
 };
 
-
-
 document.addEventListener('keydown', function (event) {
   if (event.key === 'Escape') {
     closeModalCard();
   }
 });
 
-// function fetchBook() {
-//   axios
-//     .get(`${URL_API}${bookId}`)
-//     .then(response => {
-//       const data = response.data;
-//       renderBooks(data, refs);
-//       console.log({ data });
-//     })
-//     .catch(error => {
-//       console.log('Error:', error);
-//     });
-// }
-
-
-// export function openModalCard() {
-//   if (!isModalOpen) {
-//     refs.modalCardBackDrop.style.display = 'block';
-//     refs.modalCard.style.display = 'block';
-//     const data = bookApi
-//       .fetchBook(bookId)
-//       .then((data) => renderBooks(data, refs))
-//       .catch((e) => console.log(e));
-
-//     isModalOpen = true;
-//     refs.openModalCardBtn.style.display = 'none';
-//   }
-// }
