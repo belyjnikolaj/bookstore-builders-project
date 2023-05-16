@@ -50,7 +50,7 @@ fetchBestSellers()
   
 // Viktoriia added //
 
-function createMarkupBooksCategories(arr) {
+// function createMarkupBooksCategories(arr) {
 
 //   return arr
 //     .map(
@@ -69,31 +69,31 @@ function createMarkupBooksCategories(arr) {
 
 //               <div class="book-card__img-box">
 
-  return arr.map(({ list_name, books }) =>  
-  `<div class="books_list_category">
-        <p class="category_name">${list_name}</p><ul class="books_row">${books.slice(0, booksPerList).map(({ book_image, title, author, _id, }) =>
-         ` <div class="book-card">
-           <a href="#" class="modal_popap" target="_self">
-          <div class="book-card__img-box">
-                <img class="book-card__img"src="${book_image}" alt="${title}" loading="lazy />
-              </div>
-              <div class="info ">
-                  <h3 class="info-title__item cut-text">${title}</h3>
-                  <p class="info-author__item">${author}</p>
-                  <p class = "visually-hidden">${_id}</p>
-              </div>
+//   return arr.map(({ list_name, books }) =>  
+//   `<div class="books_list_category">
+//         <p class="category_name">${list_name}</p><ul class="books_row">${books.slice(0, booksPerList).map(({ book_image, title, author, _id, }) =>
+//          ` <div class="book-card">
+//            <a href="#" class="modal_popap" target="_self">
+//           <div class="book-card__img-box">
+//                 <img class="book-card__img"src="${book_image}" alt="${title}" loading="lazy />
+//               </div>
+//               <div class="info ">
+//                   <h3 class="info-title__item cut-text">${title}</h3>
+//                   <p class="info-author__item">${author}</p>
+//                   <p class = "visually-hidden">${_id}</p>
+//               </div>
 
 //           </div>
 //       </a>`
 //           )
 //           .join('')}</ul><button class="books-category-btn">see more</button>
                                                                                                           
-          </a></div>`).join('')}</ul><button class="books-category-btn">see more</button>
-      </div> 
-    `
-    )
-    .join('');
-}
+//           </a></div>`).join('')}</ul><button class="books-category-btn">see more</button>
+//       </div> 
+//     `
+//     )
+//     .join('');
+// }
 
 // function addClickListeners() {
 //   const bookCards = document.querySelectorAll('.js-best-sellers');
