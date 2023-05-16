@@ -1,0 +1,38 @@
+.dark-mode {
+  background-color: $header-bgc-dark;
+  color: $primary-text-dark;
+}
+.dark-mode-header {
+  border: 1.5px solid #ffffff !important;
+  color: $primary-text-dark !important;
+}
+.link-dark {
+  fill: $primary-text-dark;
+  color: $primary-text-dark !important;
+  &:hover,
+  &:focus &:active {
+    color: $accent-text-dark !important;
+    fill: $accent-text-dark !important;
+  }
+}
+
+.icon-dark {
+  fill: $primary-text-dark;
+  &:hover,
+  &:focus {
+    fill: $accent-text-dark !important;
+  }
+}
+.dark-title {
+  color: #ffffff !important;
+}
+.category-btn-dark {
+  color: #ffffff !important;
+}
+.list-name-dark {
+  color: $categories-text-dark !important;
+  &:hover,
+  &:focus {
+    fill: $accent-text-dark !important;
+  }
+}

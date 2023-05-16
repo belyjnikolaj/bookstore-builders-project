@@ -1,42 +1,53 @@
+.link {
+  text-decoration: none;
+  color: $primary-text-light;
+  display: block;
+  cursor: pointer;
+  &:hover,
+  &:focus &:active {
+    color: $accent-text-light;
+  }
+}
+.link-active {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -0.04em;
+  display: block;
+  justify-content: center;
+  width: 100%;
+  height: 34px;
+  padding: 8px 16px;
+  background: $accent-text-dark;
+  border-radius: 36px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn {
+  display: block;
+  cursor: pointer;
+}
+.call-to-registration-btn {
+  display: none;
+}
 .header-conteiner {
   border: 1.5px solid #111111;
   border-radius: 0px 0px 8px 8px;
-
-  @media screen and (min-width: $mobile) {
-    padding: 20px 20px;
-    position: relative;
-  }
-
-  @media screen and (min-width: $tablet) {
-    padding: 14px 32px;
-  }
-
-  @media screen and (min-width: $desktop) {
-    padding: 14px 24px;
-  }
+  padding: 20px 20px;
+  position: relative;
+}
+.menu-conteiner-account {
+  display: none;
 }
 .switch {
   position: relative;
   display: inline-block;
   width: 40px;
   height: 20px;
-
-  @media screen and (min-width: $mobile) {
-    margin-right: 14px;
-  }
-
-  @media screen and (min-width: $tablet) {
-    margin-right: 24px;
-  }
-  @media screen and (min-width: $desktop) {
-    margin-right: 24px;
-  }
+  margin-right: 14px;
 }
-
 .switch input {
   display: none;
 }
-
 .slider {
   position: absolute;
   cursor: pointer;
@@ -49,10 +60,9 @@
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
-
 .slider:before {
   position: absolute;
-  content: '';
+  content: ‘’;
   height: 19px;
   width: 19px;
   left: 1px;
@@ -61,107 +71,107 @@
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
-
 input:checked + .slider {
   background: linear-gradient(180deg, #4f2ee8 0%, #686868 100%);
   box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
-
 input:checked + .slider:before {
   transform: translateX(20px);
 }
-
 .slider.round {
   border-radius: 34px;
 }
-
 .slider.round:before {
   border-radius: 50%;
 }
 .logo-name {
-  @media screen and (min-width: $mobile) {
-    margin-right: 144px;
-  }
-  @media screen and (min-width: $tablet) {
-    margin-right: 40px;
-  }
-
-  @media screen and (min-width: $desktop) {
-    margin-right: 76px;
-  }
+  margin-right: 144px;
 }
-
 .header-wrap {
+  position: relative;
   display: flex;
   align-items: center;
 }
-
-.burger {
-  background-color: transparent;
-  @media screen and (min-width: $tablet) {
-    display: none;
-  }
-}
-
 .nav-home-page {
   display: none;
   color: $primary-text-light;
-
-  @media screen and (min-width: $tablet) {
-    display: block;
-    margin-right: 24px;
-  }
-  @media screen and (min-width: $desktop) {
-  }
 }
-
 .nav-shopping-page {
   display: none;
   width: 100%;
-
-  @media screen and (min-width: $tablet) {
-    display: flex;
-    align-items: center;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1.27;
-    letter-spacing: -0.04em;
-    gap: 4px;
-    margin-left: 16px;
-  }
-  @media screen and (min-width: $desktop) {
-    margin-left: 24px;
-  }
 }
 .navigation {
   align-items: center;
   display: flex;
   margin-right: auto;
-  @media screen and (min-width: $tablet) {
-    margin-right: auto;
-  }
-  @media screen and (min-width: $desktop) {
-    margin-right: 746px;
-  }
 }
-
 .nav-list {
   display: flex;
   align-items: center;
-  @media screen and (min-width: $tablet) {
-  }
 }
-
-.nav-list__item {
-  gap: 40px;
-}
-
 .nav-shopping-page__icon {
   display: none;
   height: 20px;
   width: 20px;
-
-  @media screen and (min-width: $tablet) {
+}
+.burger {
+  background-color: transparent;
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+.icon-close-menu {
+  right: -10px;
+  bottom: 3px;
+  position: absolute;
+  background-color: transparent;
+  border: none;
+  &:hover,
+  &:focus {
+    fill: $accent-text-light;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+// @media screen and (max-width: 767px) {
+//   .menu-conteiner-account {
+//     display: none;
+//     position: fixed;
+//     top: 67px;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     z-index: 1;
+//     overflow: hidden;
+//     background-color: $accent-text-light;
+//     padding: 20px 20px;
+//     text-align: center;
+//     position: fixed;
+//     &.is-open {
+//       display: block;
+//     }
+//   }
+// }
+.call-to-registration-btn {
+  display: none;
+}
+@media screen and (min-width: $tablet) {
+  .icon-close-menu {
+    display: none;
+  }
+  .burger {
+    display: none;
+  }
+  .header-conteiner {
+    padding: 14px 32px;
+  }
+  .nav-list {
+    gap: 16px;
+  }
+  .nav-list__item {
+    margin-right: 24px;
+  }
+  .nav-shopping-page__icon {
     display: block;
     cursor: pointer;
     &:hover,
@@ -169,97 +179,61 @@ input:checked + .slider:before {
       fill: $accent-text-light;
     }
   }
-}
-
-.link-active {
-  @media screen and (min-width: $tablet) {
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 18px;
-    letter-spacing: -0.04em;
+  .navigation {
+    margin-right: auto;
+  }
+  .nav-home-page {
     display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 34px;
-    padding: 8px 16px;
-    background: $accent-text-dark;
-    border-radius: 36px;
-  }
-  @media screen and (min-width: $desktop) {
-  }
-}
-.link {
-  text-decoration: none;
-  color: $primary-text-light;
-  cursor: pointer;
-  &:hover,
-  &:focus &:active {
-    color: $accent-text-light;
-  }
-}
-
-.login-thumb {
-  @media screen and (min-width: $mobile) {
-    display: none;
-  }
-
-  @media screen and (min-width: $tablet) {
-    gap: 9px;
-    padding: 15px 14px;
-    display: flex;
-    justify-content: space-between;
     align-items: center;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.27;
+    letter-spacing: -0.04em;
+  }
+  .logo-name {
+    margin-right: 40px;
+  }
+  .switch {
+    margin-right: 24px;
+  }
+  .nav-shopping-page {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .call-to-registration-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 14px;
+    cursor: pointer;
     width: 184px;
     height: 45px;
-    left: 552px;
-    top: 14px;
-
-    background: $backdrop-popup;
-    border-radius: 36px;
-  }
-}
-
-.login-thumb__btn {
-  border: none;
-  background: none;
-  color: $primary-text-dark;
-  font-size: 14px;
-  line-height: 1.29;
-  letter-spacing: -0.04em;
-
-  @media screen and (min-width: $tablet) {
-  }
-}
-
-.menu-conteiner.is-open {
-  @media screen and (max-width: 767px) {
-    display: block;
-  }
-}
-
-.icon-close-menu {
-  @media screen and (min-width: $mobile) {
-    top: -55px;
-    right: 23px;
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: $button-bgc;
+    border-radius: 18px;
+    color: $primary-text-dark;
+    font-size: 14px;
+    line-height: 1.29;
+    letter-spacing: -0.04em;
     border: none;
+    &:hover,
+    &:focus {
+      border: 1.5px solid $primary-bgc-light;
+      transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
   }
 }
-
-@media screen and (max-width: 767px) {
-  .menu-conteiner {
-    display: none;
-    position: fixed;
-    top: 77px;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-
-    background-color: $accent-text-light;
-    padding: 20px 20px;
-    text-align: center;
-    position: fixed;
+@media screen and(min-width: $desktop) {
+  .header-conteiner {
+    padding: 14px 24px;
+  }
+  .navigation {
+    margin-right: auto; //746px is-open conteiner
+  }
+  .nav-list {
+    gap: 24px;
+  }
+  .logo-name {
+    margin-right: 76px;
   }
 }
