@@ -8,12 +8,7 @@
         <a class="link logo-name" href="/src/index.html"
           >Bookshelf</a
         >
-        <div class="menu-conteiner js-menu-conteiner">
-          <button class="icon-close-menu js-close-menu" type="button" aria-expanded="false" aria-controls="menu-conteiner">X
-            <svg width="28" height="28" aria-label="Перемикач мобільного меню">
-              <use href="/src/images/sprite.svg#icon-burger"></use>
-            </svg>
-          </button>
+        <div class="menu-conteiner-login js-menu-conteiner">
           <ul class="nav-list list">
             <li nav-list__item><a class="link link-active nav-home-page" href="/src/index.html">HOME</a>
             </li>
@@ -25,22 +20,24 @@
         <input class="js-color-switcher"type="checkbox" name="check" value="yes" />
         <span class="slider round"></span>
       </label>
-      <button class="burger" id="js-open-menu-btn" type="button" aria-expanded="false">V
-        <!-- <svg width="28" height="28" aria-label="Перемикач мобільного меню">
-          <use href="/src/images/sprite.svg#icon-burger"></use>
-        </svg> -->
-      </button>
-      <div class="login-thumb">
-        <button class="login-thumb__btn btn" type="button" data-registration-modal-open>Sign up</button>
-        <svg width="20" heigth="20">
-            <use href="/src/images/sprite.svg#icon-arrow-right"></use>
+      <button class="burger" id="js-open-menu-btn btn" type="button" aria-expanded="false">V
+        <svg class="burger__icon" width="28" height="28" aria-label="Перемикач мобільного меню">
+          <use class="burger__link" href="/src/images/sprite.svg#icon-burger"></use>
         </svg>
-      </div>
+      </button>
+      <button class="icon-close-menu btn" id="js-close-menu" type="button" aria-expanded="false" aria-controls="menu-conteiner">X
+        <svg class="icon-close-menu__icon"width="28" height="28" aria-label="Перемикач мобільного меню">
+          <use class="icon-close-menu__link"href="/src/images/sprite.svg#icon-x-close"></use>
+        </svg>
+      </button>
+      <button class="login-registration-btn btn"><span>Sign up</span><svg class="login-registration-btn__icon" width="20" height="20">
+        <use href="/src/images/sprite.svg#icon-arrow-right"></use>
+    </svg></button>
     </div>
   </div>
 </div>
 </header>
 
 <!-- <include src="./modal-registration.html"></include> -->
-<script src="/src/js/header.js" type="module"></script>
-<script src="/src/js/open-menu.js" type="module"></script>
+
+<script src="/src/js/open-menu-registration.js" type="module"></script>
