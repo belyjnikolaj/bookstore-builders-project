@@ -21,16 +21,29 @@ refs.closeModalCardBtn.addEventListener('click', closeModalCard);
 
 let isModalOpen = false;
 
+// export function openModalCard(bookId) {
+//   console.log({ bookId });
+//   if (!isModalOpen) {
+//     toggleModal();
+//     isModalOpen = true;
+//     refs.openModalCardBtn.style.display = 'none';
+//     return bookApi
+//       .fetchBook(bookId)
+//       .then(data => renderBooks(data, refs))
+//       .catch(e => console.log(e));
+//   }
+// }
+
 export function openModalCard(bookId) {
   console.log({ bookId });
   if (!isModalOpen) {
     toggleModal();
-    isModalOpen = true;
-    refs.openModalCardBtn.style.display = 'none';
-    return bookApi
+    const data = bookApi
       .fetchBook(bookId)
       .then(data => renderBooks(data, refs))
       .catch(e => console.log(e));
+       isModalOpen = true;
+    refs.openModalCardBtn.style.display = 'none';
   }
 }
 
@@ -58,7 +71,7 @@ const renderBooks = (data, refs) => {
   const appleBooksLink = book.buy_links.find(
     link => link.name === 'Apple Books'
   );
-
+console.log(book)
   const bookElMarkup = `
   <div class="modal-card-div">
   <img class="modal-card_img" src="${book.book_image}" alt="${book.title}" />
@@ -87,4 +100,4 @@ document.addEventListener('keydown', function (event) {
   }
 });
 
-export {openModalCard}
+export { openModalCard };
