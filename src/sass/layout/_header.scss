@@ -193,8 +193,19 @@ input:checked + .slider:before {
   .logo-name {
     margin-right: 40px;
   }
+
+// }
+// .link {
+//   text-decoration: none;
+//   color: $primary-text-light;
+//   cursor: pointer;
+//   &:hover,
+//   &:focus &:active {
+//     color: $accent-text-light ;
+
   .switch {
     margin-right: 24px;
+
   }
   .nav-shopping-page {
     display: flex;

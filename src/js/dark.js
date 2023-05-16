@@ -1,25 +1,29 @@
 export function darkMode() {
-  document.body.classList.toggle('dark-mode');
-  document
-    .querySelector('.header-conteiner')
-    .classList.toggle('dark-mode-header');
-  document.querySelector('.link').classList.toggle('link-dark');
-  document.querySelector('.nav-shopping-page').classList.toggle('link-dark');
-  document
-    .querySelector('.nav-shopping-page__icon')
-    .classList.toggle('icon-dark');
-  document.querySelectorAll('.books-category-btn').forEach(element => {
-    element.classList.toggle('category-btn-dark');
-  });
-
-  document.querySelectorAll('.info-title__item').forEach(element => {
-    element.classList.toggle('dark-title');
-  });
-  document.querySelectorAll('.list_name').forEach(element => {
-    element.classList.toggle('list-name-dark');
-  });
+  if (localStorage.getItem('theme') === 'dark') {
+    localStorage.removeItem('theme');
+  } else {
+    localStorage.setItem('theme', 'dark');
+  }
+  addDarkClass();
+  // document.querySelector('html').classList.toggle('dark');
 }
 
-// const link = document.querySelectorAll('.link').forEach(element => {
-//   element.classList.toggle('link-dark');
+function addDarkClass() {
+  try {
+    if (localStorage.getItem('theme') === 'dark') {
+      document.querySelector('html').classList.add('dark');
+      // ----- функція зміни іконки
+    } else {
+      document.querySelector('html').classList.remove('dark');
+      // ----функція зміни іконки
+    }
+  } catch (err) {}
+}
+addDarkClass();
+// document.querySelector('.js-color-switcher').addEventListener('click', () => {
+//   if (localStorage.getItem('theme') === 'dark') {
+//     localStorage.removeItem('theme');
+//   } else {
+//     localStorage.setItem('theme', 'dark');
+//   }
 // });
