@@ -97,8 +97,4 @@ function truncateTextToFitOneLine(text) {
 }
 
 
-
-
-
-
 export { displayBooksAndHighlightLastWord, truncateTextToFitOneLine };

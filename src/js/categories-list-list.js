@@ -1,4 +1,4 @@
-import { fetchBestSellers } from '/src/js/best-selling-books';
+// import { fetchBestSellers } from '/src/js/best-selling-books';
 import {
   displayBooksAndHighlightLastWord,
   truncateTextToFitOneLine,
