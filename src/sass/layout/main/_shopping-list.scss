@@ -1,0 +1,239 @@
+.shopping-list__title {
+    margin-top: 40px;
+
+    font-family: 'DM Sans';
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.1875;
+
+     letter-spacing: -0.04em;
+
+     color: $primary-text-light;
+
+
+}
+
+.span-list {
+
+    color: $accent-text-light;
+}
+
+.empty-list {
+    margin-top: 120px;
+
+    @media screen and (min-width: $tablet) {
+
+    margin-top: 140px;
+        
+      }
+    
+&__paragraph {
+    margin-left: auto;
+    margin-right: auto;
+
+    margin-bottom: 14px;
+
+    width: 244px;
+    color: $message-absent-text-light;
+
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.285;
+
+    text-align: center;
+    letter-spacing: -0.02em;    
+}
+
+&__image {
+    margin-left: auto;
+    margin-right: auto;
+   
+
+    width: 265px;
+    height: 198px;
+}
+
+}
+
+.shopping-list {
+    display: flex;
+    padding: 0;
+    margin: 40 0 0 0;
+    list-style: none;
+    gap: 20px;
+}
+
+.card-shopping {
+
+    &__container {
+
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 14px;
+        isolation: isolate;
+        width: 335px;
+        // height: 170px;
+    
+    
+        background: $header-bgc-light;
+        border: 2px solid rgba(79, 46, 232, 0.4);
+        border-radius: 16px;
+
+        @media screen and (min-width: $tablet) {
+
+            padding: 24px; 
+            
+            width: 704px;
+        }
+
+        @media screen and (min-width: $desktop) {
+
+            width: 996px;
+        }
+    }
+
+    &__image {
+        width: 100px;
+        height: 142px;
+        border-radius: 8px;
+    }
+
+
+    &__thumb {
+        display: flex;
+        flex-direction: column;
+        margin-left: 14px;
+
+        @media screen and (min-width: $tablet) {
+
+            margin-left: 24px;
+            width: 100%;
+        }
+        
+    }
+
+    &__title {
+
+        font-family: 'DM Sans';
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.125;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: $primary-text-light;
+    }
+
+    &__category {
+        margin-top: 4px;
+    
+        font-family: 'DM Sans';
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.1666;
+    letter-spacing: 0.03em;
+    
+    color: $secondary-text;
+
+    }
+
+    &__description {
+        margin-top: 8px;
+        font-family: 'DM Sans';
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.285;
+        letter-spacing: -0.04em;
+        color: $primary-text-light;
+
+        @media screen and (min-width: $tablet) {
+
+            margin-top: 14px;      
+        }
+    
+    }
+
+    &__author-links {
+        margin-top: 14px;
+        display: flex;
+        justify-content: space-between;
+
+        @media screen and (min-width: $tablet) {
+
+            margin-top: 32px;     
+            align-items: flex-end; 
+        }
+    }
+
+    &__author {
+
+        font-family: 'DM Sans';
+        font-style: italic;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 1.1666;
+        letter-spacing: -0.04em;
+        color: $secondary-text;
+        }
+
+    &__listLinks {
+        display: flex;
+        gap: 8px;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+
+        @media screen and (min-width: $tablet) {
+    
+            align-items: flex-end; 
+        }
+
+        
+    }
+
+   
+    &__deleteBtn {
+        width: 28px;
+        height: 28px;
+        position: absolute;
+        top: 14px;
+        right: 14px;
+
+        background-color: $header-bgc-light;
+
+        @media screen and (min-width: $tablet) {
+
+            width: 34px;
+            height: 34px; 
+            top: 24px;
+            right: 24px;     
+        }
+    }
+}
+
+
+
+.amazon-icon {
+    width: 32px;
+    height: 11px;
+
+    @media screen and (min-width: $tablet) {
+
+        width: 48px;
+        height: 15px;      
+    }
+}
+
+.apple-icon {
+    width: 16px;
+    height: 16px;
+
+    @media screen and (min-width: $tablet) {
+
+        width: 28px;
+        height: 27px;      
+    }
+}

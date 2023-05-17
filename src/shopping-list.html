@@ -11,6 +11,7 @@
   <body>
 
 <!--     <header class="header-conteiner">
+
     <div class="'conteiner">
       <div class="header-wrap">
         <svg width="24" height="24">
@@ -44,7 +45,7 @@
               <use href="/src/images/sprite.svg#icon-arrow-right"></use> -->
 
     <header class="header">
-      <div class="'conteiner">
+      <div class="container">
         <div class="header-wrap">
           <svg width="24" height="24">
             <use href="/src/images/sprite.svg#icon-logo"></use>
@@ -84,14 +85,14 @@
     
     <div class="container">
       <h2>Shopping <span class="list">List</span></h2>
-      <div class="shopping-list"></div>
-     <div class="empty-list">
-        <p class="empty-list__paragraph"></p>
+      <ul class="shopping-list"></ul>
+      <div class="empty-list">
+        <p class="empty-list__paragraph">This page is empty, add some books and proceed to order.</p>
         <div class="empty-list__image">
           <picture>
             <source
               srcset="
-                ./images/shopping-list/shopping-list-empty-img-375.jpg    1x,
+                ./images/shopping-list/shopping-list-empty-img-375.jpg 1x,
                 ./images/shopping-list/shopping-list-empty-img-375@2x.jpg 2x
               "
               media="(max-width: 767px)"
@@ -121,7 +122,6 @@
         </div>
       </div>
     </div>
-
-   <script type="module" src="./js/header.js"></script>
+    <script src="./js/shopping-list/shopping-list.js" type="module"></script>
   </body>
 </html>

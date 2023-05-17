@@ -37,3 +37,14 @@ body {
 .visually-hidden {
   display: none;
 }
+
+
+.cut-text {
+    text-overflow: ellipsis; // обрізання довгих блоків з текстом
+    overflow: hidden; // приховати текст, що виходить за межі блоку
+    width: 100%; // ширина блоку з текстом
+    white-space: nowrap; // заборона на перенесення тексту
+}
+
+
+
