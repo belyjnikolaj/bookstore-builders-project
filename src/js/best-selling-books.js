@@ -2,6 +2,7 @@ import { openModalCard, addToShopList} from './modal-card';
 import axios from 'axios';
 import { truncateTextToFitOneLine, displayBooksAndHighlightLastWord } from './helpers';
 import { displayBooksByCategory, createMarkupBooks } from './categories-list-list';
+import Notiflix from 'notiflix';
 
 const bestSellersGal = document.querySelector('.js-best-sellers');
 const categories = document.querySelector('.categories');
@@ -18,10 +19,7 @@ function viewPort() {
     booksPerList = 5;
   }
 }
-
 viewPort();
-
-
 
 async function fetchBestSellers() {
   const resp = await axios.get(`https://books-backend.p.goit.global/books/top-books`).then(response => response.data);
@@ -33,7 +31,11 @@ fetchBestSellers()
     bestSellersGal.insertAdjacentHTML('beforeend', createMarkupBooksCategories(data))
      addClickListeners();
   },
-    err => { console.log(err) });
+    err => {
+      console.log(err)
+     Notiflix.Notify.info(
+          'Sorry, there are no books matching your search query.'
+  );});
 
 function createMarkupBooksCategories(arr) {
   return arr.map(({ list_name, books }) =>  
