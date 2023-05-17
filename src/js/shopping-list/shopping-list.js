@@ -2,14 +2,14 @@ import axios from 'axios';
 
 
 
-import sprite from '../images/sprite.svg';
+import sprite from '../../images/sprite.svg';
 
-import amazonIcone from '../images/shopping-list/amazon-icon.png'
-import amazonXIcone from '../images/shopping-list/amazon-icon@2x.png'
-import appleIcone from '../images/shopping-list/apple-icon.png'
-import appleXIcone from '../images/shopping-list/apple-icon@2x.png'
-import bookshopIcone from '../images/shopping-list/bookshop-icon.png'
-import bookshopXIcone from '../images/shopping-list/bookshop-icon@2x.png'
+import amazonIcone from '../../images/shopping-list/amazon-icon.png'
+import amazonXIcone from '../../images/shopping-list/amazon-icon@2x.png'
+import appleIcone from '../../images/shopping-list/apple-icon.png'
+import appleXIcone from '../../images/shopping-list/apple-icon@2x.png'
+import bookshopIcone from '../../images/shopping-list/bookshop-icon.png'
+import bookshopXIcone from '../../images/shopping-list/bookshop-icon@2x.png'
 
 
 
