@@ -1,7 +1,11 @@
-import { openModalCard } from './modal-card';
+import { openModalCard, addToShopList} from './modal-card';
 import axios from 'axios';
+import { truncateTextToFitOneLine, displayBooksAndHighlightLastWord } from './helpers';
+import { displayBooksByCategory, createMarkupBooks } from './categories-list-list';
 
 const bestSellersGal = document.querySelector('.js-best-sellers');
+const categories = document.querySelector('.categories');
+
 let width = window.innerWidth;
 let booksPerList = 1;
 
@@ -20,8 +24,6 @@ viewPort();
 
 
 async function fetchBestSellers() {
-  // const BASE_URL = 'https://books-backend.p.goit.global/';
-  // const END_POINT = `books/top-books`;
   const resp = await axios.get(`https://books-backend.p.goit.global/books/top-books`).then(response => response.data);
   return resp;
 }
@@ -47,9 +49,10 @@ function createMarkupBooksCategories(arr) {
                   <h3 class="info-title__item--main-page cut-text">${title}</h3>
                   <p class="info-author__item--main-page">${author}</p>
                   <p class = "visually-hidden">${_id}</p>
-              </div>
-              </a>
-            </div>`).join('')}</ul><button class="books-category-btn">see more</button>
+               </div>
+                  </a>
+            
+            </div>`).join('')}</ul><button class="books-category-btn" data-list="${list_name}">see more</button>
       </div> 
     `
   ).join('');
@@ -73,9 +76,11 @@ function addClickListeners() {
   const bookCards = document.querySelectorAll('.js-best-sellers');
   bookCards.forEach(card => {
     const id = card.querySelector('.visually-hidden').textContent;
+    addToShopList(evt);
     card.addEventListener('click', () => {
       openModalCard(id);
       document.getElementById('data-modal-card').classList.remove('is-hidden');
+      
     });
   });
 }
@@ -83,16 +88,38 @@ function addClickListeners() {
 
 
 
+// РОЗРОЗБКА КНОПКИ----------------------------------
 
-// РОЗРОЗБКА КНОПКИ ІГОРЕМ(ЩЕ НЕ ЗАВЕРШЕНО)
-// bestSellersGal.addEventListener('click', handleCategoryBtnClick);
+const booksElement = document.querySelector('.books');
 
-// function handleCategoryBtnClick(evt) {
+bestSellersGal.addEventListener('click', handleCategoryBtnClick);
+
+  async function getBooksByCategory(newGal) {
+    const response = await axios.get(
+      `https://books-backend.p.goit.global/books/category?category=${newGal}`).then(response => response.data);
+
+    return response;
+};
   
-//   // const btnCategory = evt.target.textContent.contains();
-//   console.log(evt);
-  
-// }
+
+function handleCategoryBtnClick(evt) {
+  if (evt.target.nodeName !== "BUTTON") {
+    return;
+  }
+  bestSellersGal.innerHTML = '';
+  const newGalName = evt.target.dataset.list;
+
+ getBooksByCategory(newGalName)
+   .then(data => {
+      displayBooksByCategory(newGalName);
+      displayBooksAndHighlightLastWord(data, newGalName);
+     booksElement.insertAdjacentHTML('beforeend',createMarkupBooks(data))
+     addClickListeners();
+  },
+    err => { console.log(err) });
+    
+}
+
 
 
 export { fetchBestSellers };

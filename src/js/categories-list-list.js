@@ -144,4 +144,4 @@ categoriesList.addEventListener('click', event => {
 
 addEventListeners(); // додаємо прослуховувачів подій
 
-export { fetchCategories, createMarkupBooks };
+export { fetchCategories, createMarkupBooks, displayBooksByCategory };
