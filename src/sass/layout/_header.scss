@@ -1,17 +1,23 @@
 .header-conteiner {
   border: 1.5px solid #111111;
   border-radius: 0px 0px 8px 8px;
+  margin: 0px auto;
+  height: 64px;
+  align-items: center;
 
   @media screen and (min-width: $mobile) {
-    padding: 20px 20px;
+    padding: 18px 20px;
     position: relative;
+    max-width: 375px;
   }
 
   @media screen and (min-width: $tablet) {
+    max-width: 768px;
     padding: 14px 32px;
   }
 
   @media screen and (min-width: $desktop) {
+    max-width: 1440px;
     padding: 14px 24px;
   }
 }
@@ -80,7 +86,7 @@ input:checked + .slider:before {
 }
 .logo-name {
   @media screen and (min-width: $mobile) {
-    margin-right: 144px;
+    margin-right: auto;
   }
   @media screen and (min-width: $tablet) {
     margin-right: 40px;
@@ -94,13 +100,19 @@ input:checked + .slider:before {
 .header-wrap {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .burger {
+  height: 28px;
+  width: 28px;
   background-color: transparent;
   @media screen and (min-width: $tablet) {
     display: none;
   }
+}
+.burger__img {
+  object-fit: cover;
 }
 
 .nav-home-page {
@@ -127,7 +139,6 @@ input:checked + .slider:before {
     line-height: 1.27;
     letter-spacing: -0.04em;
     gap: 4px;
-
   }
   @media screen and (min-width: $desktop) {
     margin-right: 746px;
@@ -135,7 +146,6 @@ input:checked + .slider:before {
 }
 
 .navigation {
-
   display: flex;
   align-items: center;
   @media screen and (min-width: $tablet) {
@@ -154,10 +164,10 @@ input:checked + .slider:before {
   @media screen and (min-width: $tablet) {
     display: block;
     cursor: pointer;
-    // &:hover,
-    // &:focus {
-    //   fill: $accent-text-light;
-    // }
+    &:hover,
+    &:focus {
+      fill: $accent-text-light;
+    }
   }
 }
 .link-active {
@@ -190,7 +200,6 @@ input:checked + .slider:before {
 }
 
 .login-thumb {
-
   gap: 9px;
 
   @media screen and (min-width: $mobile) {
@@ -198,7 +207,6 @@ input:checked + .slider:before {
   }
 
   @media screen and (min-width: $tablet) {
-
     padding: 15px 14px;
     display: flex;
     justify-content: space-between;
@@ -224,4 +232,3 @@ input:checked + .slider:before {
   @media screen and (min-width: $tablet) {
   }
 }
-

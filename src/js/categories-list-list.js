@@ -1,20 +1,32 @@
-import { fetchBestSellers } from './best-selling-books';
+import { fetchBestSellers } from '/src/js/best-selling-books';
 import {
   displayBooksAndHighlightLastWord,
   truncateTextToFitOneLine,
-} from './helpers';
+} from '/src/js/helpers';
 
 const categoriesList = document.querySelector('.categories');
-const allCategoriesButton = document.querySelector('.js-all-categories');
 const bestSellers = document.querySelector('.js-best-sellers');
-const categoriesElement = document.querySelector('.categories');
 const booksElement = document.querySelector('.books');
+const containerBooks = document.querySelector('.conteiner__books');
 const booksHeroTitleElement = document.querySelector(
   '.books_hero_title--color_accent'
 );
 
-categoriesElement.addEventListener('click', () => {
-  booksElement.classList.add('active');
+
+const nameCategoryBox = document.querySelector('.name__categore-box');
+
+categoriesList.addEventListener('click', event => {
+  const selectedCategory = event.target.textContent;
+  nameCategoryBox.textContent = selectedCategory; // Оновлюємо текстовий вміст елементу nameCategoryBox
+
+  if (selectedCategory === 'All categories') {
+    fetchBestSellers(); // Викликаємо функцію для отримання найкращих книжок
+    booksElement.classList.remove('active'); // Видаляємо клас активності у елемента booksElement
+  } else {
+    // Викликаємо функцію для відображення книг з обраної категорії
+    displayBooksByCategory(selectedCategory);
+    booksElement.classList.add('active'); // Додаємо клас активності до елемента booksElement
+  }
 });
 
 booksHeroTitleElement.addEventListener('click', () => {
@@ -49,14 +61,17 @@ async function getCategories() {
 async function displayBooksByCategory(category) {
   const books = await getBooksByCategory(category);
   displayBooksAndHighlightLastWord(books, category);
-  bestSellers.innerHTML = '';
-
   booksElement.classList.add('active');
 
-  // Додайте виклик truncateTextToFitOneLine після додавання .book-card до DOM
-  const bookCard = document.querySelector('.book-card');
-  const truncatedTitle = truncateTextToFitOneLine(bookCard.querySelector('.info-title__item').textContent);
-  // Використовуйте truncatedTitle для потрібних дій
+  if (category === 'All categories') {
+    nameCategoryBox.innerHTML = `
+      <h1 class="books_hero_title">
+        Best Sellers <span class="books_hero_title--color_accent">Books</span>
+      </h1>
+    `;
+  } else {
+    nameCategoryBox.textContent = category;
+  }
 }
 
 async function getBooksByCategory(category) {
@@ -98,7 +113,7 @@ function createMarkupBooks(arr) {
                 <img class="book-card__img"src="${book_image}" alt="${title}" loading="lazy"/>
               </div> 
               <div class="info">
-                  <h3 class="info-title__item">${truncatedTitle}</
+                  <h3 class="info-title__item">${truncatedTitle}</h3>
                   <p class="info-author__item">${author}</p>             
               </div>
           </div>
@@ -106,6 +121,8 @@ function createMarkupBooks(arr) {
     })
     .join('');
 }
+
+
 
 function addEventListeners() {
   categoriesList.addEventListener('click', async event => {
@@ -147,5 +164,5 @@ categoriesList.addEventListener('click', event => {
 
 addEventListeners(); // додаємо прослуховувачів подій
 
-fetchCategories();
 export { fetchCategories, createMarkupBooks };
+

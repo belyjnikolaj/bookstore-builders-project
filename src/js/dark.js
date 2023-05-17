@@ -1,9 +1,24 @@
 export function darkMode() {
-  document.body.classList.toggle('dark-mode');
-  document
-    .querySelector('.header-conteiner')
-    .classList.toggle('dark-mode-header');
-  document.querySelector('.link').classList.toggle('link-dark');
-  document.querySelector('.nav-shopping-page').classList.toggle('link-dark');
-  //   document.querySelector('.navigation').classList.toggle('icon-dark');
+  // перевірка наявності значення теми в локалсторедж
+  if (localStorage.getItem('theme') === 'dark') {
+    localStorage.removeItem('theme');
+  } else {
+    localStorage.setItem('theme', 'dark');
+  }
+  addDarkClass();
 }
+
+function addDarkClass() {
+  // функція додавання значення теми та кнопки
+  try {
+    if (localStorage.getItem('theme') === 'dark') {
+      document.querySelector('html').classList.add('dark');
+      document
+        .querySelector('.js-color-switcher')
+        .setAttribute('checked', 'yes');
+    } else {
+      document.querySelector('html').classList.remove('dark');
+    }
+  } catch (err) {}
+}
+addDarkClass();

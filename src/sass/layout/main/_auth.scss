@@ -1,0 +1,226 @@
+.backdrop-auth {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $backdrop-popup;
+  -webkit-transition: opacity 250ms linear, visibility 300ms linear;
+  transition: opacity 250ms linear, visibility 300ms linear;
+  overflow-y: scroll;
+}
+
+.modalAuth-content {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 4px;
+  background-color: $primary-bgc-light;
+  border: 2px solid $header-bgc-light;
+  border-radius: 18px;
+  color: $primary-text-light;
+}
+
+.close {
+  margin: 14px;
+  cursor: pointer;
+  fill: black;
+  position: absolute;
+  display: inline-block;
+  top: 14;
+  right: 14;
+}
+.icon-close {
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  right: 0;
+  fill: black;
+  vertical-align: middle;
+}
+
+.tab {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.tab-content {
+  display: none;
+  justify-content: center;
+}
+
+#signin-content.show,
+#signup-content.show {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  width: 100%;
+}
+.input-wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.input-auth {
+  position: relative;
+  background: none;
+  border-radius: 40px;
+  border: 2px solid $primary-text-light;
+  gap: 10px;
+  width: 100%;
+}
+.input-auth:focus {
+  border: 2px solid $accent-bgc-color;
+}
+.input-auth:focus + span svg {
+  fill: $accent-bgc-color;
+}
+
+.input-auth::placeholder {
+  color: $primary-text-light;
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+}
+.icon-auth {
+  position: absolute;
+  display: block;
+  fill: black;
+  stroke: white;
+  stroke-width: 0;
+  display: inline-block;
+}
+
+.signin-button,
+.signup-button {
+  background-color: $primary-text-light;
+  color: $header-bgc-light;
+  border-radius: 40px;
+  border: 0px;
+  width: 100%;
+}
+
+.active-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  color: $categories-text-light;
+}
+.active-tab {
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: $categories-text-light;
+  margin-bottom: 40px;
+}
+
+.active-tab.is-active {
+  color: $accent-text-light;
+  text-decoration: underline;
+}
+
+@media (max-width: #{$tablet - 1px}) {
+  .modalAuth-content {
+    max-width: 335px;
+    max-height: 400px;
+    padding: 40px 20px;
+  }
+  .input-content {
+    margin-bottom: 24px;
+  }
+  .input-auth {
+    padding: 16px 24px;
+    padding-right: 42px;
+  }
+  .close {
+    top: 0px;
+    right: 0px;
+  }
+  .icon-close {
+    width: 10px;
+    height: 10px;
+  }
+
+  .icon-auth {
+    top: 34%;
+    right: 24px;
+    width: 18px;
+    height: 18px;
+  }
+  .signin-button,
+  .signup-button {
+    width: 100%;
+    border: 0px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    margin-bottom: 14px;
+    border-radius: 40px;
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  .modalAuth-content {
+    max-width: 579px;
+    height: 516px;
+    padding: 80px 40px 40px 40px;
+  }
+  .input-content {
+    margin-bottom: 40px;
+  }
+  .input-auth {
+    padding: 20px 40px;
+    padding-right: 68px;
+  }
+  .icon-close {
+    width: 14px;
+    height: 14px;
+  }
+  .icon-auth {
+    top: 30%;
+    right: 40px;
+    width: 28px;
+    height: 28px;
+  }
+  .signin-button,
+  .signup-button {
+    width: 100%;
+    border: 0px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-radius: 40px;
+  }
+}
+
+//DARK STYLE
+.modalAuth-content.darkStule {
+  background: $primary-bgc-dark;
+  color: $primary-text-dark;
+  border: $header-bgc-dark;
+}
+.signin-button.darkStyle,
+.signup-button.darkStyle {
+  color: $primary-text-dark;
+  background-color: $header-bgc-dark;
+}
