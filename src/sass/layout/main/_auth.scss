@@ -1,11 +1,12 @@
 .backdrop-auth {
+  z-index: 1;
   display: none;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: $backdrop-popup;
+  background: $fonds-bgc;
   -webkit-transition: opacity 250ms linear, visibility 300ms linear;
   transition: opacity 250ms linear, visibility 300ms linear;
   overflow-y: scroll;
@@ -33,7 +34,6 @@
 .close {
   margin: 14px;
   cursor: pointer;
-  fill: black;
   position: absolute;
   display: inline-block;
   top: 14;
@@ -44,7 +44,7 @@
   display: inline-block;
   top: 0;
   right: 0;
-  fill: black;
+  fill: $primary-text-light;
   vertical-align: middle;
 }
 
@@ -104,10 +104,7 @@
 .icon-auth {
   position: absolute;
   display: block;
-  fill: black;
-  stroke: white;
-  stroke-width: 0;
-  display: inline-block;
+  fill: $primary-text-light;
 }
 
 .signin-button,
@@ -214,13 +211,28 @@
 }
 
 //DARK STYLE
-.modalAuth-content.darkStule {
-  background: $primary-bgc-dark;
+.modalAuth-content {
+  background-color: $primary-bgc-dark;
+  border: 2px solid $header-bgc-dark;
   color: $primary-text-dark;
-  border: $header-bgc-dark;
 }
-.signin-button.darkStyle,
-.signup-button.darkStyle {
+.icon-close{
+  fill: $primary-text-dark;
+}
+.input-auth{
+    border: 2px solid $primary-text-dark; 
+}
+.input-auth::placeholder {
   color: $primary-text-dark;
-  background-color: $header-bgc-dark;
+}
+.icon-auth {
+  fill: $primary-text-dark;
+}
+.signin-button,
+.signup-button {
+  color: $primary-bgc-dark;
+  background-color: $primary-text-dark;
+}
+.active-tab {
+  color: $categories-text-dark;
 }

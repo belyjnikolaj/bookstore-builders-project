@@ -24,7 +24,7 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-const headerSignButton = document.getElementById('call-to-registration-btn');
+const headerSignButton = document.querySelector('call-to-registration-btn');
 const modal = document.getElementById('modal-auth');
 const close = document.getElementById('close');
 const signinTab = document.getElementById('signin-tab');
@@ -34,98 +34,60 @@ const signupContent = document.getElementById('signup-content');
 const signinButton = document.getElementById('signin-button');
 const signupButton = document.getElementById('signup-button');
 const userButton = document.getElementById('user-auth');
-const logAutButton = document.getElementById('logaut-auth');
-
-
+const logOutButton = document.getElementById('logaut-auth');
 
 document.addEventListener('DOMContentLoaded', () => {
   onAuthStateChanged(auth, user => {
     if (user) {
       userButton.style.display = 'block';
-      logAutButton.style.display = 'block';
+      logOutButton.style.display = 'block';
       headerSignButton.style.display = 'none';
       userButton.textContent = user.displayName;
     } else {
       userButton.style.display = 'none';
-      logAutButton.style.display = 'none';
+      logOutButton.style.display = 'none';
       headerSignButton.style.display = 'block';
     }
   });
 });
-
-headerSignButton.addEventListener('click', () => {
-  modal.style.display = 'block';
-  signinContent.classList.add('show');
-  headerSignButton.style.display = 'none';
-});
-
 function checkAuthState() {
   const user = auth.currentUser;
   if (user) {
     userButton.style.display = 'block';
-    logAutButton.style.display = 'block';
+    logOutButton.style.display = 'block';
     headerSignButton.style.display = 'none';
     userButton.textContent = user.displayName;
   } else {
     userButton.style.display = 'none';
-    logAutButton.style.display = 'none';
+    logOutButton.style.display = 'none';
     headerSignButton.style.display = 'block';
   }
-}
-
-close.addEventListener('click', () => {
+} 
+function closeModal() {
   modal.style.display = 'none';
   signinContent.classList.remove('show');
   signinTab.classList.remove('is-active');
   signupTab.classList.add('is-active');
-
   checkAuthState();
-});
-
-logAutButton.addEventListener('click', () => {
-  signOut(auth)
-    .then(() => {
-      console.log('User logged out');
-      Notify.success('Logged out successfully!');
-    })
-    .catch(error => {
-      console.error('Error logging out:', error);
-      Notify.failure('Error logging out');
-    });
-  
+};
+function successfulLogin() {
+   modal.style.display = 'none';
+   userButton.style.display = 'block';
+   userButton.textContent = user.displayName;
+  logOutButton.style.display = 'block';
   checkAuthState();
-});
-
-signinTab.addEventListener('click', () => {
-  signinContent.classList.add('show');
-  signupContent.classList.remove('show');
-  signupTab.classList.remove('is-active');
-  signinTab.classList.add('is-active');
-});
-
-signupTab.addEventListener('click', () => {
-  signinContent.classList.remove('show');
-  signupContent.classList.add('show');
-  signinTab.classList.remove('is-active');
-  signupTab.classList.add('is-active');
-});
-
-signinButton.addEventListener('click', () => {
+};
+function signIn() {
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
-
   signinButton.disabled = true;
   signinButton.textContent = 'Loading...';
-
   signInWithEmailAndPassword(auth, email, password)
     .then(userCredential => {
       const user = userCredential.user;
       console.log('Successful user login:', user);
       Notify.success('Successful login!');
-      modal.style.display = 'none';
-      userButton.style.display = 'block';
-      userButton.textContent = user.displayName;
-      logAutButton.style.display = 'block';
+      successfulLogin();
       checkAuthState();
     })
     .catch(error => {
@@ -138,9 +100,8 @@ signinButton.addEventListener('click', () => {
       signinButton.disabled = false;
       signinButton.textContent = 'SIGN IN';
     });
-});
-
-signupButton.addEventListener('click', () => {
+}
+function signUp() {
   const email = document.getElementById('signup-email').value;
   const password = document.getElementById('signup-password').value;
   const name = document.getElementById('name').value;
@@ -164,7 +125,6 @@ signupButton.addEventListener('click', () => {
               Notify.success('Successful registration!');
               modal.style.display = 'none';
 
-              // Update user profile after successful registration
               return updateProfile(auth.currentUser, {
                 displayName: name,
               });
@@ -200,4 +160,52 @@ signupButton.addEventListener('click', () => {
     signupButton.disabled = false;
     signupButton.textContent = 'Sign Up';
   }
+}
+function logOut() {
+  signOut(auth)
+    .then(() => {
+      console.log('User logged out');
+      Notify.success('Logged out successfully!');
+    })
+    .catch(error => {
+      console.error('Error logging out:', error);
+      Notify.failure('Error logging out');
+    });
+
+  checkAuthState();
+}
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && modal.style.display !== 'none') {
+    closeModal();}
+});
+close.addEventListener('click', () => {
+  closeModal();
+  checkAuthState();
+});
+headerSignButton.addEventListener('click', () => {
+  modal.style.display = 'block';
+  signupContent.classList.add('show');
+  signupTab.classList.add('is-active');
+  headerSignButton.style.display = 'none';
+});
+logOutButton.addEventListener('click', () => {
+  logOut();
+});
+signinTab.addEventListener('click', () => {
+  signinContent.classList.add('show');
+  signupContent.classList.remove('show');
+  signupTab.classList.remove('is-active');
+  signinTab.classList.add('is-active');
+});
+signupTab.addEventListener('click', () => {
+  signinContent.classList.remove('show');
+  signupContent.classList.add('show');
+  signinTab.classList.remove('is-active');
+  signupTab.classList.add('is-active');
+});
+signinButton.addEventListener('click', () => {
+  signIn();
+});
+signupButton.addEventListener('click', () => {
+  signUp();
 });
