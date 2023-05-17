@@ -144,15 +144,18 @@ function addClickListeners() {
     });
   });
 }
+
+
+
 // export { fetchBestSellers };
 
 bestSellersGal.addEventListener('click', handleCategoryBtnClick);
 
 // function  handleCategoryBtnClick(evt) {
 //   const btnCategory = evt.currentTarget.textContent.contains();
-//   console.log(btnCategory);
+//   console.log(btnCategory); 
   
-// } 
+// } //це видалиті віка
 
 
 
