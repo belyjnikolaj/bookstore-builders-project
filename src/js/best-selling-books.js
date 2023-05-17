@@ -1,4 +1,4 @@
-import { openModalCard, addToShopList} from './modal-card';
+import { openModalCard } from './modal-card';
 import axios from 'axios';
 import { truncateTextToFitOneLine, displayBooksAndHighlightLastWord } from './helpers';
 import { displayBooksByCategory, createMarkupBooks } from './categories-list-list';
