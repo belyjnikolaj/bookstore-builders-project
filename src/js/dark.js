@@ -1,29 +1,24 @@
 export function darkMode() {
+  // перевірка наявності значення теми в локалсторедж
   if (localStorage.getItem('theme') === 'dark') {
     localStorage.removeItem('theme');
   } else {
     localStorage.setItem('theme', 'dark');
   }
   addDarkClass();
-  // document.querySelector('html').classList.toggle('dark');
 }
 
 function addDarkClass() {
+  // функція додавання значення теми та кнопки
   try {
     if (localStorage.getItem('theme') === 'dark') {
       document.querySelector('html').classList.add('dark');
-      // ----- функція зміни іконки
+      document
+        .querySelector('.js-color-switcher')
+        .setAttribute('checked', 'yes');
     } else {
       document.querySelector('html').classList.remove('dark');
-      // ----функція зміни іконки
     }
   } catch (err) {}
 }
 addDarkClass();
-// document.querySelector('.js-color-switcher').addEventListener('click', () => {
-//   if (localStorage.getItem('theme') === 'dark') {
-//     localStorage.removeItem('theme');
-//   } else {
-//     localStorage.setItem('theme', 'dark');
-//   }
-// });
