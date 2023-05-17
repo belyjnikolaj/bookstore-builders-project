@@ -41,9 +41,9 @@ function shoppingListMarkup(bookData) {
   <div class="card-shopping__container">
        <img src="${book_image}" alt="${title}" class="card-shopping__image" />
        <div class="card-shopping__thumb">
-        <h2 class="card-shopping__title">${title}</h2>
-        <h3 class="card-shopping__category">${list_name}</h3>
-          <p class="card-shopping__description">${description}</p>
+        <h2 class="card-shopping__title cut-text">${title}</h2>
+        <h3 class="card-shopping__category cut-text">${list_name}</h3>
+          <p class="card-shopping__description cut-text">${description}</p>
           <div class="card-shopping__author-links">
               <p class="card-shopping__author">${author}</p>
               <ul class="card-shopping__listLinks">
