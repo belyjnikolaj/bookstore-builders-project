@@ -193,11 +193,31 @@
 }
 
 .shopping-list-links {
-  margin-bottom: 40px;
-  display: flex;
   gap: 20px;
+  display: flex;
+  align-items: center;
+  margin-top: 14px;
+  margin-bottom: 40px;
+
+  @media screen and (min-width: $tablet) {
+    margin-top: 20px;
+    margin-bottom: 0px;
+
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-top: 20px;
+    margin-bottom: 0px;
+
+  }
 }
 
-// .img-amazon {
-//   mix-blend-mode: luminosity;
+.shopping-list-links_icon:hover {
+  box-shadow: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15)) ;
+  mix-blend-mode: luminosity ;
+}
+
+// .shopping-list-links_item:hover {
+//   box-shadow: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15)) ;
+//     mix-blend-mode: luminosity ;
 // }
