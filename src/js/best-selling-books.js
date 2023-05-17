@@ -1,7 +1,7 @@
-import { openModalCard, addToShopList} from '/src/js/modal-card';
+import { openModalCard, addToShopList} from './modal-card';
 import axios from 'axios';
-import { truncateTextToFitOneLine, displayBooksAndHighlightLastWord } from '/src/js/helpers';
-import { displayBooksByCategory, createMarkupBooks } from '/src/js/categories-list-list';
+import { truncateTextToFitOneLine, displayBooksAndHighlightLastWord } from './helpers';
+import { displayBooksByCategory, createMarkupBooks } from './categories-list-list';
 import Notiflix from 'notiflix';
 const bestSellersGal = document.querySelector('.js-best-sellers');
 const categories = document.querySelector('.categories');
