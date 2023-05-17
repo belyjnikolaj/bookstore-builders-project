@@ -24,7 +24,7 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-const headerSignButton = document.querySelector('call-to-registration-btn');
+const headerSignButton = document.querySelector('.call-to-registration-btn');
 const modal = document.getElementById('modal-auth');
 const close = document.getElementById('close');
 const signinTab = document.getElementById('signin-tab');
