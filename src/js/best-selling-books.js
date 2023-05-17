@@ -45,10 +45,10 @@ function createMarkupBooksCategories(arr) {
          ` <div>
              <a href="#" class="modal_popap" target="_self">
                <div class="book-card__img-box--main-page">
-                 <img class="book-card__img--main-page"src="${book_image}" alt="${title}" loading="lazy />
+                 <img class="book-card__img--main-page"src="${book_image}" alt="" loading="lazy />
                </div>
                <div>
-                  <h3 class="info-title__item--main-page cut-text">${title}</h3>
+                  <p class="info-title__item--main-page " id="title" class="cut-text">${title}</p>
                   <p class="info-author__item--main-page">${author}</p>
                   <p class = "visually-hidden">${_id}</p>
                </div>
@@ -74,18 +74,18 @@ function createMarkupBooksCategories(arr) {
 // }
 
 
-function addClickListeners() {
-  const bookCards = document.querySelectorAll('.js-best-sellers');
-  bookCards.forEach(card => {
-    const id = card.querySelector('.visually-hidden').textContent;
-    addToShopList(evt);
-    card.addEventListener('click', () => {
-      openModalCard(id);
-      document.getElementById('data-modal-card').classList.remove('is-hidden');
+// function addClickListeners() {
+//   const bookCards = document.querySelectorAll('.js-best-sellers');
+//   bookCards.forEach(card => {
+//     const id = card.querySelector('.visually-hidden').textContent;
+//     addToShopList(evt);
+//     card.addEventListener('click', () => {
+//       openModalCard(id);
+//       document.getElementById('data-modal-card').classList.remove('is-hidden');
       
-    });
-  });
-}
+//     });
+//   });
+// }
 
 
 
