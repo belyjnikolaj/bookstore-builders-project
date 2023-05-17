@@ -20,3 +20,4 @@ fetchBestSellers()
   )
   .catch(err => console.log(err));
 
+import './js/auth.js'
