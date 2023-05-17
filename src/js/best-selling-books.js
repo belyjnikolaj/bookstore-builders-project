@@ -79,10 +79,27 @@ function addClickListeners() {
     });
   });
 }
+// export { fetchBestSellers };
+
+bestSellersGal.addEventListener('click', handleCategoryBtnClick);
+
+// function  handleCategoryBtnClick(evt) {
+//   const btnCategory = evt.currentTarget.textContent.contains();
+//   console.log(btnCategory); 
+  
+// } //це видалиті віка
 
 
 
-
+// function addClickListeners() {
+//   const bookCards = document.querySelectorAll('.book-card');
+//   bookCards.forEach(card => {
+//     const id = card.querySelector('.visually-hidden').textContent;
+//     card.addEventListener('click', () => {
+//       openModalCard(id);
+//     });
+//   });
+// }
 
 // РОЗРОЗБКА КНОПКИ ІГОРЕМ(ЩЕ НЕ ЗАВЕРШЕНО)
 // bestSellersGal.addEventListener('click', handleCategoryBtnClick);
