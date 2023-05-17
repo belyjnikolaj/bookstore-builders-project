@@ -1,38 +1,69 @@
-.dark-mode {
+.dark body {
+  background-color: $primary-bgc-dark;
+  color: $header-bgc-light;
+}
+.dark .header-conteiner {
   background-color: $header-bgc-dark;
+  border: 1.5px solid $header-bgc-light;
+}
+
+.dark .logo-name {
   color: $primary-text-dark;
 }
-.dark-mode-header {
-  border: 1.5px solid #ffffff !important;
-  color: $primary-text-dark !important;
+
+.dark .nav-shopping-page__icon {
+  @media screen and (min-width: $tablet) {
+    fill: $primary-text-dark;
+  }
 }
-.link-dark {
-  fill: $primary-text-dark;
-  color: $primary-text-dark !important;
+.dark .nav-shopping-page {
+  color: $primary-text-dark;
+}
+
+.dark .info-title__item {
+  color: $primary-text-dark;
+}
+
+.dark .books-category-btn {
+  color: $primary-text-dark;
+}
+
+.dark .list_name {
+  color: $categories-text-dark;
   &:hover,
-  &:focus &:active {
-    color: $accent-text-dark !important;
-    fill: $accent-text-dark !important;
+  &:focus {
+    color: $accent-text-dark;
   }
 }
 
-.icon-dark {
-  fill: $primary-text-dark;
-  &:hover,
-  &:focus {
-    fill: $accent-text-dark !important;
-  }
-}
-.dark-title {
-  color: #ffffff !important;
-}
-.category-btn-dark {
-  color: #ffffff !important;
-}
-.list-name-dark {
-  color: $categories-text-dark !important;
-  &:hover,
-  &:focus {
-    fill: $accent-text-dark !important;
-  }
-}
+// .name__categore {
+//   font-weight: 700;
+//   font-size: 48px;
+//   line-height: 1.08;
+//   letter-spacing: -0.04em;
+
+//   color: primary-text-light;
+// }
+
+// .info-title__item {
+//   font-weight: 700;
+//   font-size: 16px;
+//   line-height: 1.125;
+//   letter-spacing: -0.04em;
+
+//   color: $primary-text-light;
+// }
+
+// .info-author__item {
+//   font-style: italic;
+//   font-size: 12px;
+//   line-height: 1.17;
+//   letter-spacing: -0.04em;
+
+//   color: $secondary-text;
+// }
+// .categories .list_name.selected {
+//   text-transform: uppercase;
+//   color: #4f2ee8;
+//   font-weight: 700;
+// }
