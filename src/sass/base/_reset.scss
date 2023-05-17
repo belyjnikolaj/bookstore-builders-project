@@ -5,7 +5,7 @@ h4,
 h5,
 h6,
 p {
-    margin-top: 0;
+  margin-top: 0;
 }
 
 a {
@@ -13,26 +13,36 @@ a {
     text-decoration: none;
     padding: 0px;
     margin: 0px;
+
 }
 
 p {
-    margin: 0px;
-    padding: 0px;
+  margin: 0px;
+  padding: 0px;
 }
 
 img {
-    display: block;
-    margin: 0;
-    max-width: 100%;
-    height: auto;
+  display: block;
+  margin: 0;
+  max-width: 100%;
+  height: auto;
 }
 
 ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 address {
+
     font-style: normal;
 }
+
+button {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+  }
+

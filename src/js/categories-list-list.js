@@ -7,9 +7,27 @@ import {
 const categoriesList = document.querySelector('.categories');
 const bestSellers = document.querySelector('.js-best-sellers');
 const booksElement = document.querySelector('.books');
+const containerBooks = document.querySelector('.conteiner__books');
 const booksHeroTitleElement = document.querySelector(
   '.books_hero_title--color_accent'
 );
+
+
+const nameCategoryBox = document.querySelector('.name__categore-box');
+
+categoriesList.addEventListener('click', event => {
+  const selectedCategory = event.target.textContent;
+  nameCategoryBox.textContent = selectedCategory; // Оновлюємо текстовий вміст елементу nameCategoryBox
+
+  if (selectedCategory === 'All categories') {
+    fetchBestSellers(); // Викликаємо функцію для отримання найкращих книжок
+    booksElement.classList.remove('active'); // Видаляємо клас активності у елемента booksElement
+  } else {
+    // Викликаємо функцію для відображення книг з обраної категорії
+    displayBooksByCategory(selectedCategory);
+    booksElement.classList.add('active'); // Додаємо клас активності до елемента booksElement
+  }
+});
 
 booksHeroTitleElement.addEventListener('click', () => {
   const bestSellersElement = document.querySelector('.js-best-sellers');
@@ -43,16 +61,17 @@ async function getCategories() {
 async function displayBooksByCategory(category) {
   const books = await getBooksByCategory(category);
   displayBooksAndHighlightLastWord(books, category);
-  bestSellers.innerHTML = '';
-
   booksElement.classList.add('active');
 
-  // Додайте виклик truncateTextToFitOneLine після додавання .book-card до DOM
-  const bookCard = document.querySelector('.book-card');
-  const truncatedTitle = truncateTextToFitOneLine(
-    bookCard.querySelector('.info-title__item').textContent
-  );
-  // Використовуйте truncatedTitle для потрібних дій
+  if (category === 'All categories') {
+    nameCategoryBox.innerHTML = `
+      <h1 class="books_hero_title">
+        Best Sellers <span class="books_hero_title--color_accent">Books</span>
+      </h1>
+    `;
+  } else {
+    nameCategoryBox.textContent = category;
+  }
 }
 
 async function getBooksByCategory(category) {
@@ -104,6 +123,7 @@ function createMarkupBooks(arr) {
 }
 
 
+
 function addEventListeners() {
   categoriesList.addEventListener('click', async event => {
     if (event.target.classList.contains('js-all-categories')) {
@@ -144,4 +164,9 @@ categoriesList.addEventListener('click', event => {
 
 addEventListeners(); // додаємо прослуховувачів подій
 
+
 export { fetchCategories, createMarkupBooks, displayBooksByCategory };
+
+
+
+

@@ -5,14 +5,51 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shopping List</title>
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
     <link rel="stylesheet" href="./sass/index.scss" />
   </head>
   <body>
+
+<!--     <header class="header-conteiner">
+
+    <div class="'conteiner">
+      <div class="header-wrap">
+        <svg width="24" height="24">
+          <use href="/src/images/sprite.svg#icon-logo"></use>
+        </svg>
+        <a class="link logo-name" href="/src/index.html"
+          >Bookshelf</a
+        >
+        <nav class="navigation">
+          <ul class="nav-list list">
+              <li nav-list__item><a class=" nav-home-page" href="/src/index.html">HOME</a>
+              </li>
+              <li nav-list__item><a class="link link link-active nav-shopping-page" href="/src/shopping-list.html">SHOPPING LIST<svg class="nav-shopping-page__icon"><use href="/src/images/sprite.svg#icon-uil_cart"></svg></a></li>  
+          </ul>
+        </nav>
+        <label class="switch">
+          <input class="js-color-switcher"type="checkbox" name="check" value="yes" />
+          <span class="slider round"></span>
+        </label>
+        <button class="burger js-open-menu" type="button" aria-expanded="false">
+          <svg width="28" height="28">
+            <!-- <use href="/src/images/sprite.svg#icon-close"></use> -->
+            <use href="/src/images/sprite.svg#icon-burger"></use>
+          </svg>
+        </button>
+        <div class="login-thumb">
+          <!-- <svg width="37" heigth="37">
+              <use href="/src/images/sprite.svg#icon-user"></use></svg> -->
+          <button class="login-thumb__btn" type="button">Sign up</button>
+          <svg width="20" heigth="20">
+              <use href="/src/images/sprite.svg#icon-arrow-right"></use> -->
+
     <header class="header">
-      <div class="'conteiner">
+      <div class="container">
         <div class="header-wrap">
           <svg width="24" height="24">
             <use href="/src/images/sprite.svg#icon-logo"></use>
+
           </svg>
           <a class="link logo-name" href="/src/index.html"
             >Bookshelf</a
@@ -48,14 +85,14 @@
     
     <div class="container">
       <h2>Shopping <span class="list">List</span></h2>
-      <div class="shopping-list"></div>
-     <div class="empty-list">
-        <p class="empty-list__paragraph"></p>
+      <ul class="shopping-list"></ul>
+      <div class="empty-list">
+        <p class="empty-list__paragraph">This page is empty, add some books and proceed to order.</p>
         <div class="empty-list__image">
           <picture>
             <source
               srcset="
-                ./images/shopping-list/shopping-list-empty-img-375.jpg    1x,
+                ./images/shopping-list/shopping-list-empty-img-375.jpg 1x,
                 ./images/shopping-list/shopping-list-empty-img-375@2x.jpg 2x
               "
               media="(max-width: 767px)"
@@ -85,5 +122,6 @@
         </div>
       </div>
     </div>
+    <script src="./js/shopping-list/shopping-list.js" type="module"></script>
   </body>
 </html>

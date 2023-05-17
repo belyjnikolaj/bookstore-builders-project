@@ -1,61 +1,95 @@
-<button id="start-button">Start</button>
 <button id="user-auth">USER</button>
-<button id="logaut-auth">LOGAUT</button>
+<button id="logaut-auth">LOGOUT</button>
 
 <div class="backdrop-auth" id="modal-auth">
-  <div class="modal-content">
-    <span class="close" id="close"><svg class="icon icon-x-close"><use xlink:href="./images/auth/x-close.svg
-      "></use></svg></span>
+  <div class="modalAuth-content">
+    <span class="close" id="close">
+      <svg class="icon-close">
+        <use  href="./images/sprite.svg#icon-close"></use>
+      </svg>
+    </span>
 
     <div class="tab-content" id="signin-content">
       <div class="input-content">
-        <input
-          class="input-auth"
-          type="email"
-          id="email"
-          placeholder="EMAIL"
-          required
-        />
-        <input
-          class="input-auth"
-          type="password"
-          id="password"
-          placeholder="PASSWORD"
-          required
-        />
+        <div class="input-wrapper">
+          <input
+            class="input-auth"
+            type="email"
+            id="email"
+            placeholder="EMAIL"
+            required
+          />
+          <span>
+            <svg class="icon-auth email-signin">
+              <use href="./images/sprite.svg#icon-mail"></use>
+            </svg>
+          </span>
+        </div>
+
+        <div class="input-wrapper">
+          <input
+            class="input-auth"
+            type="password"
+            id="password"
+            placeholder="PASSWORD"
+            required
+          />
+          <span>
+            <svg class="icon-auth pass-signin">
+              <use xlink:href="./images/sprite.svg#icon-lock"></use>
+            </svg>
+          </span>
+        </div>
+        <button class="signin-button" id="signin-button">SIGN IN</button>
       </div>
-      <button class="signin-button" id="signin-button">SIGN IN</button>
     </div>
 
     <div class="tab-content" id="signup-content">
       <div class="input-content">
         <input
           class="input-auth"
-          type="name"
+          type="text"
           id="name"
           placeholder="NAME"
           required
         />
-        <input
-          class="input-auth"
-          type="email"
-          id="signup-email"
-          placeholder="EMAIL"
-          required
-        />
-        <input
-          class="input-auth"
-          type="password"
-          id="signup-password"
-          placeholder="PASSWORD"
-          required
-        />
+        <div class="input-wrapper">
+          <input
+            class="input-auth"
+            type="email"
+            id="signup-email"
+            placeholder="EMAIL"
+            required
+          />
+          <span>
+            <svg class="icon-auth">
+              <use href="./images/sprite.svg#icon-mail"></use>
+            </svg>
+          </span>
+        </div>
+        <div class="input-wrapper">
+          <input
+            class="input-auth"
+            type="password"
+            id="signup-password"
+            placeholder="PASSWORD"
+            required
+          />
+          <span>
+            <svg class="icon-auth">
+              <use href="./images/sprite.svg#icon-lock"></use>
+            </svg>
+          </span>
+        </div>
       </div>
       <button class="signup-button" id="signup-button">SIGN UP</button>
     </div>
+
     <div class="active-list">
-      <span class="active-tab" id="signin-tab">Sign In</span>
+      <span class="active-tab is-active" id="signin-tab">Sign In</span>
       <span class="active-tab" id="signup-tab">Sign Up</span>
     </div>
   </div>
 </div>
+
+<script type="module" src="./js/auth.js"></script>

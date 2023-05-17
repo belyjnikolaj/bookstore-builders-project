@@ -1,42 +1,50 @@
 body {
-    font-family: 'DM Sans', sans-serif;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin: 0px;
+  font-family: 'DM Sans', sans-serif;
+  //   padding-left: 20px;
+  //   padding-right: 20px;
+  margin: 0px auto;
+  max-width: $desktop;
 }
 .container {
-    width: 100%;
-    max-width: $desktop;
-    min-width: 200px;
+  width: 100%;
+  max-width: $desktop;
+  min-width: 200px;
 
-    padding-right: 20px;
-    padding-left: 20px;
-    margin-left: auto;
-    margin-right: auto;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-left: auto;
+  margin-right: auto;
 
-    @media screen and (min-width: $mobile) {
-        width: $mobile;
+  @media screen and (min-width: $mobile) {
+    width: $mobile;
+  }
 
-    }
+  @media screen and (min-width: $tablet) {
+    padding-right: 32px;
+    padding-left: 32px;
 
-    @media screen and (min-width: $tablet) {
-        padding-right: 32px;
-        padding-left: 32px;
+    width: $tablet;
+  }
 
-        width: $tablet;
+  @media screen and (min-width: $desktop) {
+    padding-right: 24px;
+    padding-left: 24px;
 
-    }
-
-    @media screen and (min-width: $desktop) {
-        padding-right: 24px;
-        padding-left: 24px;
-
-        width: $desktop;
-
-    }
+    width: $desktop;
+  }
 }
 
 .visually-hidden {
-    display: none;
+  display: none;
 }
+
+
+.cut-text {
+    text-overflow: ellipsis; // обрізання довгих блоків з текстом
+    overflow: hidden; // приховати текст, що виходить за межі блоку
+    width: 100%; // ширина блоку з текстом
+    white-space: nowrap; // заборона на перенесення тексту
+}
+
+
 
