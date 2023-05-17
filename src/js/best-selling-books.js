@@ -102,14 +102,14 @@ bestSellersGal.addEventListener('click', handleCategoryBtnClick);
 // }
 
 // РОЗРОЗБКА КНОПКИ ІГОРЕМ(ЩЕ НЕ ЗАВЕРШЕНО)
-// bestSellersGal.addEventListener('click', handleCategoryBtnClick);
+bestSellersGal.addEventListener('click', handleCategoryBtnClick);
 
-// function handleCategoryBtnClick(evt) {
+function handleCategoryBtnClick(evt) {
   
-//   // const btnCategory = evt.target.textContent.contains();
-//   console.log(evt);
+  // const btnCategory = evt.target.textContent.contains();
+  console.log(evt);
   
-// }
+}
 
 
 export { fetchBestSellers };
